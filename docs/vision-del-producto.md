@@ -37,7 +37,7 @@
 | Tipo de usuario | Qué necesita del sistema | Qué le preocupa |
 |---|---|---|
 |Usuario estándar — excursionista, turista o persona interesada en la naturaleza |Facilidad de uso y acceso rápido al reconocimiento mediante la cámara, con una experiencia similar a Shazam: apuntar y obtener una identificación sin conocimientos especializados |Que la identificación sea incorrecta o tarde demasiado. Necesita una respuesta rápida acompañada de fotografías y características visuales que le permitan corroborar que la especie identificada corresponde con lo que está observando |
-| | | |
+|Usuario avanzado — estudiantes, científicos, investigadores o entusiastas con conocimientos de flora y fauna |Acceso a información detallada y técnica de la especie identificada: nombre científico, taxonomía, nivel de confianza, características distintivas y especies similares. Además, debe tener acceso preliminar a bases de datos y modelos en fase beta, con una cobertura considerablemente mayor de especies por región |La precisión y confiabilidad de la identificación, especialmente ante especies visualmente similares. Le preocupa poder distinguir resultados confiables de identificaciones inciertas y contar con suficiente información para contrastarlos y validarlos, particularmente al utilizar modelos o bases de datos experimentales |
 
 *Instrucción: necesitas al menos dos tipos de usuario con necesidades distintas. Si los dos quieren exactamente lo mismo, probablemente sean el mismo usuario.*
 
