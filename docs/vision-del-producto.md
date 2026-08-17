@@ -16,7 +16,7 @@
 
 ## 1. Descripción del sistema
 
-*Instrucción: nombre del sistema y qué hace, en un párrafo que cualquier persona entienda sin ser del área. Si necesitas usar una palabra técnica para explicarlo, todavía no está listo.*
+
 
 **Nombre del sistema: Sistema offline de detección de flora y fauna.**
 
@@ -26,7 +26,6 @@
 
 ## 2. Problema y usuarios
 
-*Instrucción: qué problema resuelve, a quién le sirve y, muy importante, qué hace esa gente hoy para arreglárselas sin el sistema. Esa última parte es la que revela el problema real.*
 
 **El problema: Dificultad para identificar de manera rápida y accesible especies de flora y fauna propias de una región en zonas naturales con conectividad limitada o inexistente.**
 
@@ -39,11 +38,9 @@
 |Usuario estándar — excursionista, turista o persona interesada en la naturaleza |Facilidad de uso y acceso rápido al reconocimiento mediante la cámara, con una experiencia similar a Shazam: apuntar y obtener una identificación sin conocimientos especializados |Que la identificación sea incorrecta o tarde demasiado. Necesita una respuesta rápida acompañada de fotografías y características visuales que le permitan corroborar que la especie identificada corresponde con lo que está observando |
 |Usuario avanzado — estudiantes, científicos, investigadores o entusiastas con conocimientos de flora y fauna |Acceso a información detallada y técnica de la especie identificada: nombre científico, taxonomía, nivel de confianza, características distintivas y especies similares. Además, debe tener acceso preliminar a bases de datos y modelos en fase beta, con una cobertura considerablemente mayor de especies por región |La precisión y confiabilidad de la identificación, especialmente ante especies visualmente similares. Le preocupa poder distinguir resultados confiables de identificaciones inciertas y contar con suficiente información para contrastarlos y validarlos, particularmente al utilizar modelos o bases de datos experimentales |
 
-*Instrucción: necesitas al menos dos tipos de usuario con necesidades distintas. Si los dos quieren exactamente lo mismo, probablemente sean el mismo usuario.*
 
 **Un conflicto entre usuarios: El usuario estándar prioriza la rapidez y simplicidad, esperando identificar una especie casi inmediatamente al apuntar la cámara. En cambio, el usuario avanzado prioriza la calidad, precisión y profundidad del resultado, y puede aceptar un mayor tiempo de procesamiento a cambio de analizar más especies, obtener un nivel de confianza más fiable y acceder a información técnica adicional.**
 
-*Instrucción: describe algo que un usuario quiera y que a otro le estorbe. Ahí está tu primera decisión de diseño real.*
 
 ---
 
