@@ -36,7 +36,7 @@
 
 | Tipo de usuario | Qué necesita del sistema | Qué le preocupa |
 |---|---|---|
-| | | |
+|Usuario estándar — excursionista, turista o persona interesada en la naturaleza |Facilidad de uso y acceso rápido al reconocimiento mediante la cámara, con una experiencia similar a Shazam: apuntar y obtener una identificación sin conocimientos especializados |Que la identificación sea incorrecta o tarde demasiado. Necesita una respuesta rápida acompañada de fotografías y características visuales que le permitan corroborar que la especie identificada corresponde con lo que está observando |
 | | | |
 
 *Instrucción: necesitas al menos dos tipos de usuario con necesidades distintas. Si los dos quieren exactamente lo mismo, probablemente sean el mismo usuario.*
