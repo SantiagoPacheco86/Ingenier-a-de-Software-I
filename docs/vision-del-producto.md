@@ -9,7 +9,7 @@
 ---
 
 **Autor: Santiago Pacheco Carrillo**
-**Fecha de la última versión: N/A**
+**Fecha de la última versión: 17/08/2026**
 **Repositorio: Ingenieria de Software I**
 
 ---
