@@ -8,9 +8,9 @@
 
 ---
 
-**Autor:**
-**Fecha de la última versión:**
-**Repositorio:**
+**Autor: Santiago Pacheco Carrillo**
+**Fecha de la última versión: N/A**
+**Repositorio: Ingenieria de Software I**
 
 ---
 
@@ -18,9 +18,9 @@
 
 *Instrucción: nombre del sistema y qué hace, en un párrafo que cualquier persona entienda sin ser del área. Si necesitas usar una palabra técnica para explicarlo, todavía no está listo.*
 
-**Nombre del sistema:**
+**Nombre del sistema: Sistema offline de detección de flora y fauna.**
 
-**Descripción:**
+**Descripción: Un sistema basado en el entrenamiento de modelos de inteligencia artificial con bases de datos localizadas de flora y fauna para la detección y despliegue de información de estas a través del uso de la cámara de un teléfono inteligente.**
 
 ---
 
@@ -28,9 +28,9 @@
 
 *Instrucción: qué problema resuelve, a quién le sirve y, muy importante, qué hace esa gente hoy para arreglárselas sin el sistema. Esa última parte es la que revela el problema real.*
 
-**El problema:**
+**El problema: Dificultad para identificar de manera rápida y accesible especies de flora y fauna propias de una región en zonas naturales con conectividad limitada o inexistente.**
 
-**Cómo se resuelve hoy sin el sistema:**
+**Cómo se resuelve hoy sin el sistema: Observación del organismo → registro de características → comparación con referencias → descarte de especies → identificación probable → validación por experto**
 
 **Usuarios del sistema:**
 
