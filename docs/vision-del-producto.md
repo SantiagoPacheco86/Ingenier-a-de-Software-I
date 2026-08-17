@@ -41,7 +41,7 @@
 
 *Instrucción: necesitas al menos dos tipos de usuario con necesidades distintas. Si los dos quieren exactamente lo mismo, probablemente sean el mismo usuario.*
 
-**Un conflicto entre usuarios:**
+**Un conflicto entre usuarios: El usuario estándar prioriza la rapidez y simplicidad, esperando identificar una especie casi inmediatamente al apuntar la cámara. En cambio, el usuario avanzado prioriza la calidad, precisión y profundidad del resultado, y puede aceptar un mayor tiempo de procesamiento a cambio de analizar más especies, obtener un nivel de confianza más fiable y acceder a información técnica adicional.**
 
 *Instrucción: describe algo que un usuario quiera y que a otro le estorbe. Ahí está tu primera decisión de diseño real.*
 
