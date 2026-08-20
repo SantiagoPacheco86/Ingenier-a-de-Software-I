@@ -43,9 +43,9 @@
 
 ## Semana 2 - Primer contacto con la dupla
 
-**Huecos:
-1:
-2:**
+**Huecos:**
+> 1:
+> 2:
 
 ---
 
