@@ -41,6 +41,11 @@
 
 **Un conflicto entre usuarios: El usuario estándar prioriza la rapidez y simplicidad, esperando identificar una especie casi inmediatamente al apuntar la cámara. En cambio, el usuario avanzado prioriza la calidad, precisión y profundidad del resultado, y puede aceptar un mayor tiempo de procesamiento a cambio de analizar más especies, obtener un nivel de confianza más fiable y acceder a información técnica adicional.**
 
+## Semana 2 - Primer contacto con la dupla
+
+**Huecos:
+1:
+2:**
 
 ---
 
