@@ -44,8 +44,8 @@
 ## Semana 2 - Primer contacto con la dupla
 
 **Huecos:**
-> 1:\
-> 2:
+> 1:Posible problema con la cantidad de especies y el peso del software.\
+> 2:Posibilidad de utilizar la base de datos del software para apoyar a biólogos y documentar la vida silvestre de la zona.
 
 ---
 
