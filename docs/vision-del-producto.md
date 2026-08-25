@@ -18,7 +18,7 @@
 
 
 
-**Nombre del sistema: Sistema offline de detección de flora y fauna.**
+**Nombre del sistema: Sistema de detección de flora y fauna local.**
 
 **Descripción: Un sistema basado en el entrenamiento de modelos de inteligencia artificial con bases de datos localizadas de flora y fauna para la detección y despliegue de información de estas a través del uso de la cámara de un teléfono inteligente.**
 
@@ -27,7 +27,7 @@
 ## 2. Problema y usuarios
 
 
-**El problema: Dificultad para identificar de manera rápida y accesible especies de flora y fauna propias de una región en zonas naturales con conectividad limitada o inexistente.**
+**El problema: Dificultad para identificar de manera rápida y accesible especies de flora y fauna propias de una región en zonas naturales.**
 
 **Cómo se resuelve hoy sin el sistema: Observación del organismo → registro de características → comparación con referencias → descarte de especies → identificación probable → validación por experto**
 
