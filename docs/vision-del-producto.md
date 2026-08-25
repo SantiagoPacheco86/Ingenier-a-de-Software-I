@@ -75,7 +75,7 @@
 
 --- **No identifica especies fuera del modelo o base de datos regional instalada:** Queda fuera porque ampliar la cobertura requeriría incorporar y entrenar el sistema con una cantidad considerablemente mayor de especies.\ 
 --- **No garantiza una identificación definitiva de la especie:** Queda fuera porque el resultado depende de factores como la calidad de la imagen, similitud entre especies y datos disponibles para el modelo.\
---- **No constituye una plataforma científica de validación colaborativa:** Queda fuera porque requeriría implementar mecanismos adicionales de revisión por expertos, validación de registros y colaboración entre usuarios.
+--- **No constituye una plataforma científica de validación colaborativa:** Queda fuera porque requeriría implementar mecanismos adicionales de revisión por expertos, validación de registros y colaboración entre usuarios.\
 
 ## 4. Tipo de sistema y restricciones
 
