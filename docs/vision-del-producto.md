@@ -85,16 +85,20 @@ Queda fuera porque requeriría implementar mecanismos adicionales de revisión p
 
 **Tipo de sistema:**
 
-*(De información · Embebido · Crítico · Web y SaaS · De datos y análisis)*
+De datos y análisis
 
 **Por qué es de ese tipo:**
+
+Porque a trevés de un modelo de inteligencia artificial entrenado con bases de datos seleccionadas, proporciona una conclusión/estimación a cerca de lo que se le alimenta.
 
 **Atributos de calidad que impone:**
 
 | Atributo | Por qué importa en mi caso | Qué pasa si no se cumple |
 |---|---|---|
-| | | |
-| | | |
+|Calidad de los datos | | |
+|Precisión | | |
+|Tiempo de procesamiento | | |
+|Privacidad | | |
 
 **Reglas de negocio que ya identifiqué:**
 
