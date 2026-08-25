@@ -18,9 +18,10 @@
 
 
 
-**Nombre del sistema: Sistema de detección de flora y fauna local.**
+**Nombre del sistema: Sistema de detección de flora y fauna local para senderistas.**
 
-**Descripción: Un sistema basado en el entrenamiento de modelos de inteligencia artificial con bases de datos localizadas de flora y fauna para la detección y despliegue de información de estas a través del uso de la cámara de un teléfono inteligente.**
+**Descripción: Un sistema basado en el entrenamiento de modelos de inteligencia artificial con bases de datos localizadas de flora y fauna para la detección y despliegue de información de estas a través del uso de la cámara de un teléfono inteligente./
+El sistema se orienta a senderistas que buscan identificar las especies de animales con las que se encuentran en sus rutas**
 
 ---
 
