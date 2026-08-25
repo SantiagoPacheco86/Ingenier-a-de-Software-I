@@ -52,8 +52,6 @@
 
 ## 3. Alcance
 
-*Instrucción: lo que escribes en "fuera del alcance" es lo que después evita que el proyecto crezca sin control. Sé específico: "reportes" no dice nada, "reportes de ventas mensuales exportables a PDF" sí.*
-
 ### Dentro del alcance
 
 - Presentación de información de la especie identificada: nombre común, nombre científico, región, nivel de riesgo o importancia médica, nivel de confianza y especies visualmente similares presentes en la región.
@@ -70,8 +68,6 @@
 - No identifica especies fuera de las bases de datos/modelos utilizados para la región seleccionada
 
 **Por qué queda fuera:**
-
-*Instrucción: para al menos una de las exclusiones, explica la razón. Puede ser tiempo, complejidad, o que no aporta al problema central.*
 
 --- **No identifica especies fuera del modelo o base de datos regional instalada:** 
 Queda fuera porque ampliar la cobertura requeriría incorporar y entrenar el sistema con una cantidad considerablemente mayor de especies. 
