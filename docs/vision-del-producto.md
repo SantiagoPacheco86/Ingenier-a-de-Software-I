@@ -95,10 +95,10 @@ Porque a trevés de un modelo de inteligencia artificial entrenado con bases de 
 
 | Atributo | Por qué importa en mi caso | Qué pasa si no se cumple |
 |---|---|---|
-|Calidad de los datos | | |
-|Precisión | | |
-|Tiempo de procesamiento | | |
-|Privacidad | | |
+|Calidad de los datos |El modelo depende de imágenes y datos representativos y correctamente clasificados para aprender las características de cada especie |Datos incorrectos, insuficientes o poco representativos pueden provocar identificaciones erróneas y reducir la confiabilidad del modelo. |
+|Precisión |Es necesario que el sistema diferencie correctamente entre especies, especialmente aquellas visualmente similares o de importancia médica. |Una identificación incorrecta puede desinformar al usuario y es especialmente relevante si se confunden especies peligrosas con especies inofensivas. |
+|Tiempo de procesamiento |El usuario estándar espera obtener una identificación rápidamente después de apuntar la cámara o capturar una imagen. |Un procesamiento demasiado lento perjudica la experiencia del usuario y reduce la utilidad del reconocimiento en campo. |
+|Privacidad |Las imágenes y registros pueden contener información asociada al usuario o a la ubicación donde se realizó una observación. |El almacenamiento o exposición no autorizada de estos datos puede comprometer la privacidad del usuario y la ubicación de determinadas especies. |
 
 **Reglas de negocio que ya identifiqué:**
 
