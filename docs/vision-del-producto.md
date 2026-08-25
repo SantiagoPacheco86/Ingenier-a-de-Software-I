@@ -56,22 +56,26 @@
 
 ### Dentro del alcance
 
--
--
--
--
+- Presentación de información de la especie identificada: nombre común, nombre científico, región, nivel de riesgo o importancia médica, nivel de confianza y especies visualmente similares presentes en la región.
+- Identificación de especies mediante la cámara de un teléfono inteligente.
+- Recopilación y almacenamiento de datos de las identificaciones realizadas por Usuarios Avanzados, con el propósito de apoyar la documentación de flora y fauna regional.
+- Historial de especies identificadas por el usuario, incluyendo los datos asociados a cada identificación.
+- Reconocimiento offline de especies de importancia médica, siempre que el usuario haya descargado previamente la base de datos o modelo correspondiente a su región.
 
 ### Explícitamente fuera del alcance
 
--
--
--
+- No guarda la imagén utilizada para la detección (Usuario Estándar)
+- No constituye una plataforma científica de validación colaborativa.
+- No garantiza una identificación definitiva de la especie.
+- No identifica especies fuera de las bases de datos/modelos utilizados para la región seleccionada
 
 **Por qué queda fuera:**
 
 *Instrucción: para al menos una de las exclusiones, explica la razón. Puede ser tiempo, complejidad, o que no aporta al problema central.*
 
----
+--- **No identifica especies fuera del modelo o base de datos regional instalada:** Queda fuera porque ampliar la cobertura requeriría incorporar y entrenar el sistema con una cantidad considerablemente mayor de especies. 
+--- **No garantiza una identificación definitiva de la especie:** Queda fuera porque el resultado depende de factores como la calidad de la imagen, similitud entre especies y datos disponibles para el modelo.
+--- **No constituye una plataforma científica de validación colaborativa:** Queda fuera porque requeriría implementar mecanismos adicionales de revisión por expertos, validación de registros y colaboración entre usuarios.
 
 ## 4. Tipo de sistema y restricciones
 
