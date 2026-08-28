@@ -114,21 +114,27 @@ Porque a trevés de un modelo de inteligencia artificial entrenado con bases de 
 
 *Instrucción: este apartado se trabaja en la semana 3, después de ver los modelos de desarrollo. La justificación pesa más que la elección: no hay un modelo correcto, hay uno defendible para tu caso.*
 
-**Modelo elegido:**
+**Modelo elegido: Ágil (Extreme Programming)**
 
 **Por qué le conviene a este proyecto:**
 
-*Instrucción: argumenta con las características reales de tu caso. Estabilidad de los requisitos, disponibilidad del cliente, nivel de riesgo, tamaño del equipo, frecuencia de entregas esperada.*
+Se utiliza un modelo Ágil con prácticas de Extreme Programming (XP) debido a que los requisitos del proyecto no son completamente estables y pueden evolucionar conforme se entrenen, prueben y ajusten los modelos de IA para el reconocimiento de flora y fauna. El desarrollo dependerá de ciclos constantes de entrenamiento, evaluación, ajuste o fine-tuning e integración de nuevas versiones del modelo.
+
+La retroalimentación de los usuarios será frecuente y tendrá una participación importante en el desarrollo y evolución del sistema, permitiendo detectar problemas relacionados con la experiencia de uso, calidad de las identificaciones y nuevas necesidades.
+
+El proyecto presenta riesgos técnicos y de producto, debido a posibles cambios en los modelos de reconocimiento, bases de datos, herramientas utilizadas y requisitos de hardware. Por ello, resulta conveniente realizar pruebas e integraciones frecuentes en lugar de esperar hasta una versión final.
+
+Asimismo, al tratarse de un equipo de desarrollo pequeño, XP resulta adecuado por favorecer la comunicación directa, el desarrollo incremental y la adaptación rápida a los cambios. Finalmente, se espera realizar entregas frecuentes de versiones funcionales, incorporando progresivamente mejoras en la aplicación y nuevas versiones de los modelos de reconocimiento.
 
 ### Alternativas descartadas
 
-**Alternativa 1:**
+**Alternativa 1: Prototipado**
 
-*Por qué la descarté:*
+*Por qué la descarté: Es una alternativa adecuada para el proyecto, especialmente para diseñar y validar la interfaz y la experiencia de usuario, por lo que se utilizará como complemento del modelo Ágil (XP). Sin embargo, se descarta como modelo principal porque el proyecto no se limita a validar una interfaz o descubrir requisitos mediante prototipos; también requiere desarrollar, entrenar, evaluar e integrar continuamente un modelo de reconocimiento de especies. Este proceso necesita múltiples iteraciones, pruebas y ajustes antes de obtener versiones suficientemente confiables para su integración. Por ello, Ágil (XP) proporciona un marco más adecuado para gestionar la evolución completa del sistema, mientras que el prototipado se utilizará principalmente para validar la experiencia de usuario.*
 
-**Alternativa 2:**
+**Alternativa 2: Modelo V**
 
-*Por qué la descarté:*
+*Por qué la descarté: El Modelo V podría ser una alternativa, ya que establece etapas claras de desarrollo acompañadas de procesos de verificación y validación, lo cual es necesario y conveniente para comprobar la calidad del sistema. Sin embargo, se descarta como modelo principal porque el proyecto no cuenta con requisitos completamente estables y verificables desde el inicio. El desarrollo depende de la retroalimentación frecuente de los usuarios y de los resultados obtenidos durante las pruebas del modelo de reconocimiento, lo que puede provocar cambios en los requisitos y en la experiencia de uso. Esta necesidad de adaptación continua resulta más compatible con un enfoque Ágil (XP).*
 
 ---
 
