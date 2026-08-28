@@ -104,9 +104,9 @@ Porque a trevés de un modelo de inteligencia artificial entrenado con bases de 
 
 *Instrucción: reglas que no son obvias desde fuera y que alguien que conoce el dominio tendría que explicarte. Si no encuentras ninguna, tu caso puede ser demasiado simple.*
 
-1.
-2.
-3.
+1. Si el porcentaje de confianza de la identificación es inferior al 90 %, el resultado no deberá presentarse como confiable.
+2. Si la calidad de la fotografía no es suficiente para realizar una identificación adecuada, el sistema deberá solicitar al usuario un nuevo intento y proporcionar recomendaciones para mejorar la imagen.
+3. Si la especie no se encuentra dentro de la base de datos o del modelo disponible, el sistema no deberá forzar una identificación y deberá indicar que no fue posible reconocerla.
 
 ---
 
