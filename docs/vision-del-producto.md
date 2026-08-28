@@ -81,8 +81,6 @@ Queda fuera porque requeriría implementar mecanismos adicionales de revisión p
 
 ## 4. Tipo de sistema y restricciones
 
-*Instrucción: identifica de qué tipo es tu sistema y qué te obliga a garantizar ese tipo. Un sistema de información y un sistema crítico no se diseñan igual.*
-
 **Tipo de sistema:**
 
 De datos y análisis
@@ -102,8 +100,6 @@ Porque a trevés de un modelo de inteligencia artificial entrenado con bases de 
 
 **Reglas de negocio que ya identifiqué:**
 
-*Instrucción: reglas que no son obvias desde fuera y que alguien que conoce el dominio tendría que explicarte. Si no encuentras ninguna, tu caso puede ser demasiado simple.*
-
 1. Si el porcentaje de confianza de la identificación es inferior al 90 %, el resultado no deberá presentarse como confiable.
 2. Si la calidad de la fotografía no es suficiente para realizar una identificación adecuada, el sistema deberá solicitar al usuario un nuevo intento y proporcionar recomendaciones para mejorar la imagen.
 3. Si la especie no se encuentra dentro de la base de datos o del modelo disponible, el sistema no deberá forzar una identificación y deberá indicar que no fue posible reconocerla.
@@ -111,8 +107,6 @@ Porque a trevés de un modelo de inteligencia artificial entrenado con bases de 
 ---
 
 ## 5. Ciclo de vida elegido
-
-*Instrucción: este apartado se trabaja en la semana 3, después de ver los modelos de desarrollo. La justificación pesa más que la elección: no hay un modelo correcto, hay uno defendible para tu caso.*
 
 **Modelo elegido: Ágil (Extreme Programming)**
 
@@ -142,13 +136,13 @@ Asimismo, al tratarse de un equipo de desarrollo pequeño, XP resulta adecuado p
 
 Reviso que el documento cumpla lo siguiente:
 
-- [ ] La descripción del apartado 1 se entiende sin ser del área
-- [ ] Hay al menos dos tipos de usuario con necesidades distintas
-- [ ] Identifiqué un conflicto real entre usuarios
-- [ ] El alcance dice qué queda fuera, no solo qué queda dentro
-- [ ] Las exclusiones son específicas, no genéricas
-- [ ] Identifiqué el tipo de sistema y al menos dos atributos de calidad
-- [ ] Anoté al menos tres reglas de negocio no obvias
-- [ ] Justifiqué el ciclo de vida contra dos alternativas descartadas
+- [x] La descripción del apartado 1 se entiende sin ser del área
+- [x] Hay al menos dos tipos de usuario con necesidades distintas
+- [x] Identifiqué un conflicto real entre usuarios
+- [x] El alcance dice qué queda fuera, no solo qué queda dentro
+- [x] Las exclusiones son específicas, no genéricas
+- [x] Identifiqué el tipo de sistema y al menos dos atributos de calidad
+- [x] Anoté al menos tres reglas de negocio no obvias
+- [x] Justifiqué el ciclo de vida contra dos alternativas descartadas
 - [ ] El documento está en mi repositorio y se puede leer desde el navegador
 - [ ] Borré todas las instrucciones en cursiva de la plantilla
