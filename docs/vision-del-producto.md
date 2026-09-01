@@ -79,11 +79,11 @@ Queda fuera porque requeriría implementar mecanismos adicionales de revisión p
 
 **Tipo de sistema:**
 
-De datos y análisis
+De datos y análisis (SaaS)
 
 **Por qué es de ese tipo:**
 
-Porque a trevés de un modelo de inteligencia artificial entrenado con bases de datos seleccionadas, proporciona una conclusión/estimación a cerca de lo que se le alimenta.
+Porque a trevés de un modelo de inteligencia artificial entrenado con bases de datos seleccionadas, proporciona una conclusión/estimación a cerca de lo que se le alimenta, además es un SaaS, por que es un producto dirigido a un mercado (senderistas) conocido.
 
 **Atributos de calidad que impone:**
 
