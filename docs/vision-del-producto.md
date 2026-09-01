@@ -140,5 +140,5 @@ Reviso que el documento cumpla lo siguiente:
 - [x] Identifiqué el tipo de sistema y al menos dos atributos de calidad
 - [x] Anoté al menos tres reglas de negocio no obvias
 - [x] Justifiqué el ciclo de vida contra dos alternativas descartadas
-- [ ] El documento está en mi repositorio y se puede leer desde el navegador
-- [ ] Borré todas las instrucciones en cursiva de la plantilla
+- [x] El documento está en mi repositorio y se puede leer desde el navegador
+- [x] Borré todas las instrucciones en cursiva de la plantilla
