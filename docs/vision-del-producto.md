@@ -79,7 +79,7 @@ Queda fuera porque requeriría implementar mecanismos adicionales de revisión p
 
 **Tipo de sistema:**
 
-De datos y análisis (SaaS)
+De datos y análisis y software a la medida (SaaS)
 
 **Por qué es de ese tipo:**
 
