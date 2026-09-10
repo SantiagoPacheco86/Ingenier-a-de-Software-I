@@ -1,6 +1,6 @@
 # Visión del producto
 
-> **Plantilla del curso · Ingeniería de Software I · SIS3407**
+> **Plantilla del curso · Ingeniería de Software I · SIS3407**\n
 > **Repositorio: https://github.com/SantiagoPacheco86/Ingenier-a-de-Software-I**
 
 ---
