@@ -65,54 +65,11 @@ El sistema contempla:
 BIOMA contempla dos tipos principales de usuario: el **usuario
 estándar** y el **usuario avanzado**.
 
-  -----------------------------------------------------------------------
-  Usuario                 Qué hace hoy sin el     Qué espera del sistema
-                          sistema                 
-  ----------------------- ----------------------- -----------------------
-  **Usuario estándar ---  Observa el organismo,   Facilidad de uso y
-  excursionista, turista  registra o recuerda sus acceso rápido al
-  o persona interesada en características, las    reconocimiento mediante
-  la naturaleza**         compara con referencias la cámara, con una
-                          disponibles, descarta   experiencia similar a
-                          posibles especies hasta Shazam: apuntar y
-                          obtener una             obtener una
-                          identificación probable identificación sin
-                          y, cuando es necesario, requerir conocimientos
-                          busca validación de una especializados. Espera
-                          persona con mayor       una respuesta rápida
-                          conocimiento.           acompañada de
-                                                  fotografías,
-                                                  características
-                                                  visuales y datos que le
-                                                  permitan corroborar que
-                                                  la especie identificada
-                                                  corresponde con lo
-                                                  observado.
+| Usuario | Qué hace hoy sin el sistema | Qué espera del sistema |
+| --- | --- | --- |
+| **Usuario estándar — excursionista, turista o persona interesada en la naturaleza** | Observa el organismo, registra o recuerda sus características, las compara con referencias disponibles, descarta posibles especies hasta obtener una identificación probable y, cuando es necesario, busca validación de una persona con mayor conocimiento. | Facilidad de uso y acceso rápido al reconocimiento mediante la cámara, con una experiencia similar a Shazam: apuntar y obtener una identificación sin requerir conocimientos especializados. Espera una respuesta rápida acompañada de fotografías, características visuales y datos que le permitan corroborar que la especie identificada corresponde con lo observado. |
+| **Usuario avanzado — estudiantes, científicos, investigadores o entusiastas con conocimientos de flora y fauna** | Realiza observaciones y compara las características del organismo con referencias y conocimiento especializado para determinar una identificación. Posteriormente puede registrar y organizar manualmente sus observaciones para utilizarlas en documentación, investigación o trabajo de campo. | Acceso a información detallada y técnica de la especie identificada, como nombre científico, taxonomía, nivel de confianza, características distintivas y especies similares. Espera poder acceder preliminarmente a bases de datos y modelos en fase beta con mayor cobertura regional, además de registrar, organizar y documentar observaciones que puedan utilizarse como apoyo para estudios biológicos, monitoreo de especies o trabajo de campo. |
 
-  **Usuario avanzado ---  Realiza observaciones y Acceso a información
-  estudiantes,            compara las             detallada y técnica de
-  científicos,            características del     la especie
-  investigadores o        organismo con           identificada, como
-  entusiastas con         referencias y           nombre científico,
-  conocimientos de flora  conocimiento            taxonomía, nivel de
-  y fauna**               especializado para      confianza,
-                          determinar una          características
-                          identificación.         distintivas y especies
-                          Posteriormente puede    similares. Espera poder
-                          registrar y organizar   acceder preliminarmente
-                          manualmente sus         a bases de datos y
-                          observaciones para      modelos en fase beta
-                          utilizarlas en          con mayor cobertura
-                          documentación,          regional, además de
-                          investigación o trabajo registrar, organizar y
-                          de campo.               documentar
-                                                  observaciones que
-                                                  puedan utilizarse como
-                                                  apoyo para estudios
-                                                  biológicos, monitoreo
-                                                  de especies o trabajo
-                                                  de campo.
-  -----------------------------------------------------------------------
 
 **Conflictos identificados entre usuarios:**
 
