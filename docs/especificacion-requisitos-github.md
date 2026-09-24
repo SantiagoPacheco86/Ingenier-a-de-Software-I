@@ -157,6 +157,7 @@ requerida por los usuarios avanzados.
 | **Prioridad** | Imprescindible |
 | **Criterio de aceptación** | Al analizar una especie que no pueda ser identificada mediante el modelo disponible, el sistema informa al usuario que no fue posible realizar la identificación y no presenta una especie como resultado confirmado. |
 | **Relacionado con** | RF-001, RF-003 |
+---
 
 ## 4. Requisitos no funcionales
 
@@ -165,10 +166,11 @@ requerida por los usuarios avanzados.
 | ID | Atributo | Nombre | Prioridad | Origen |
 | --- | --- | --- | --- | --- |
 | RNF-CON-001 | Confiabilidad | Calidad de datos de referencia | Imprescindible | Derivado del tipo de sistema |
-| RNF-CON-002 | Confiabilidad | Precisión de identificación | Imprescindible | Derivado del tipo de sistema y entrevista de elicitación |
-| RNF-REN-001 | Rendimiento | Tiempo de identificación | Imprescindible | Derivado del tipo de sistema y del documento de requisitos inicial |
+| RNF-CON-002 | Confiabilidad | Precisión general de identificación | Imprescindible | Derivado del tipo de sistema y especificación |
+| RNF-CON-003 | Confiabilidad | Precisión en especies de importancia médica | Imprescindible | Entrevista de elicitación y especificación |
+| RNF-REN-001 | Rendimiento | Tiempo de identificación | Imprescindible | Documento de requisitos inicial |
 | RNF-SEG-001 | Seguridad | Protección de datos | Imprescindible | Derivado del tipo de sistema |
-| RNF-ESC-001 | Escalabilidad | Capacidad del historial | Importante | Documento de requisitos inicial |
+| RNF-ESC-001 | Escalabilidad | Capacidad del historial | Importante | Documento de requisitos inicial y especificación |
 
 ### 4.2 Fichas
 
@@ -184,17 +186,29 @@ requerida por los usuarios avanzados.
 | **Por qué importa** | Datos incorrectamente clasificados pueden provocar identificaciones erróneas y reducir la confiabilidad de los resultados. |
 | **Afecta a** | RF-001, RF-002, RF-003, RF-005 |
 
-#### RNF-CON-002 · Precisión de identificación
+#### RNF-CON-002 · Precisión general de identificación
 
 | Campo | Contenido |
 | --- | --- |
 | **Atributo de calidad** | Confiabilidad |
-| **Descripción** | El sistema alcanza una precisión mínima de identificación definida sobre un conjunto de imágenes de prueba previamente clasificadas. |
-| **Métrica** | Porcentaje de identificaciones correctas sobre un conjunto de imágenes de prueba previamente clasificadas. El porcentaje mínimo aceptable queda pendiente de validación. |
-| **Origen** | Derivado del tipo de sistema. La entrevista de elicitación confirmó que la certeza de la identificación adquiere especial importancia ante especies de relevancia médica. |
+| **Descripción** | El sistema alcanza una precisión mínima del 90 % en la identificación general de especies incluidas en el modelo disponible. |
+| **Métrica** | Al menos el 90 % de las identificaciones realizadas sobre un conjunto de imágenes de prueba previamente clasificadas debe coincidir con la especie correcta. |
+| **Origen** | Derivado del tipo de sistema. El umbral mínimo del 90 % fue establecido durante la especificación de requisitos. |
 | **Prioridad** | Imprescindible |
-| **Por qué importa** | Una identificación incorrecta puede proporcionar información equivocada al usuario y adquiere especial relevancia cuando existen especies visualmente similares o de importancia médica. |
+| **Por qué importa** | Una precisión insuficiente reduce la confiabilidad del sistema y puede proporcionar información incorrecta sobre las especies observadas. |
 | **Afecta a** | RF-001, RF-003, RF-005 |
+
+#### RNF-CON-003 · Precisión en especies de importancia médica
+
+| Campo | Contenido |
+| --- | --- |
+| **Atributo de calidad** | Confiabilidad |
+| **Descripción** | El sistema alcanza una precisión mínima del 99 % en la identificación de especies clasificadas como de importancia médica e incluidas en el modelo disponible. |
+| **Métrica** | Al menos el 99 % de las identificaciones realizadas sobre un conjunto de imágenes de prueba previamente clasificadas de especies de importancia médica debe coincidir con la especie correcta. |
+| **Origen** | Entrevista de elicitación y especificación. El entrevistado indicó que la certeza adquiere especial importancia ante especies de relevancia médica; el umbral del 99 % fue establecido posteriormente durante la especificación de requisitos. |
+| **Prioridad** | Imprescindible |
+| **Por qué importa** | Una identificación incorrecta de una especie de importancia médica puede llevar al usuario a interpretar incorrectamente el riesgo asociado con el organismo observado. |
+| **Afecta a** | RF-001, RF-002, RF-003, RF-005 |
 
 #### RNF-REN-001 · Tiempo de identificación
 
@@ -233,7 +247,6 @@ requerida por los usuarios avanzados.
 | **Afecta a** | RF-004 |
 
 ---
-
 ## 5. Casos de uso
 
 ------------------------------------------------------------------------
