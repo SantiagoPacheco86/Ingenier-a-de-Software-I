@@ -380,6 +380,7 @@ elicitación.
 | 24/09/2026 | RNF-CON-002 | Se estableció una precisión mínima general del modelo del 90 %. | Convertir el atributo de precisión general en un requisito no funcional medible. |
 | 24/09/2026 | RNF-CON-003 | Se estableció una precisión mínima del modelo del 99 % para especies de importancia médica. | La entrevista evidenció la necesidad de mayor certeza en especies de importancia médica y durante la especificación se definió el umbral cuantitativo. |
 | 24/09/2026 | RNF-ESC-001 | Se definió que, al superar las 50 identificaciones del historial estándar, se elimina la identificación más antigua. | El requisito original establecía el límite, pero no especificaba el comportamiento al alcanzar la capacidad máxima. |
+| 24/09/2026 | RF-012 | Se agregó el tratamiento de imágenes con calidad insuficiente para realizar una identificación. | La regla ya existía en la Visión del producto y la entrevista de elicitación confirmó que condiciones como contraluz, poca iluminación o colores poco visibles dificultan el proceso de identificación. |
 
 ---
 
