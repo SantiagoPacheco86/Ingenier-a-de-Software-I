@@ -158,19 +158,43 @@ requerida por los usuarios avanzados.
 | **Criterio de aceptación** | Al analizar una especie que no pueda ser identificada mediante el modelo disponible, el sistema informa al usuario que no fue posible realizar la identificación y no presenta una especie como resultado confirmado. |
 | **Relacionado con** | RF-001, RF-003 |
 
----
-
 ## 4. Requisitos no funcionales
 
 ### 4.1 Resumen
 
 | ID | Atributo | Nombre | Prioridad | Origen |
 | --- | --- | --- | --- | --- |
+| RNF-CON-001 | Confiabilidad | Calidad de datos de referencia | Imprescindible | Derivado del tipo de sistema |
+| RNF-CON-002 | Confiabilidad | Precisión de identificación | Imprescindible | Derivado del tipo de sistema y entrevista de elicitación |
 | RNF-REN-001 | Rendimiento | Tiempo de identificación | Imprescindible | Documento de requisitos inicial |
-| RNF-SEG-001 | Seguridad | Protección de credenciales | Imprescindible | Documento de requisitos inicial |
-| RNF-ESC-001 | Escalabilidad / Capacidad | Capacidad del historial | Importante | Documento de requisitos inicial; supuesto pendiente de validación |
+| RNF-SEG-001 | Seguridad | Protección de datos | Imprescindible | Derivado del tipo de sistema |
+| RNF-ESC-001 | Escalabilidad | Capacidad del historial | Importante | Documento de requisitos inicial |
 
 ### 4.2 Fichas
+
+#### RNF-CON-001 · Calidad de datos de referencia
+
+| Campo | Contenido |
+| --- | --- |
+| **Atributo de calidad** | Confiabilidad |
+| **Descripción** | Los datos utilizados como referencia por el sistema corresponden a especies identificadas y clasificadas antes de su incorporación al conjunto de datos disponible. |
+| **Métrica** | El 100 % de las especies incorporadas al conjunto de datos cuenta con una identificación y clasificación asociada. |
+| **Origen** | Derivado del tipo de sistema: la identificación depende de datos representativos y correctamente clasificados. |
+| **Prioridad** | Imprescindible |
+| **Por qué importa** | Datos incorrectamente clasificados pueden provocar identificaciones erróneas y reducir la confiabilidad de los resultados. |
+| **Afecta a** | RF-001, RF-002, RF-003, RF-005 |
+
+#### RNF-CON-002 · Precisión de identificación
+
+| Campo | Contenido |
+| --- | --- |
+| **Atributo de calidad** | Confiabilidad |
+| **Descripción** | El sistema alcanza una precisión mínima de identificación definida sobre un conjunto de imágenes de prueba previamente clasificadas. |
+| **Métrica** | Porcentaje de identificaciones correctas sobre un conjunto de imágenes de prueba previamente clasificadas. El porcentaje mínimo aceptable queda pendiente de validación. |
+| **Origen** | Derivado del tipo de sistema. La entrevista de elicitación confirmó que la certeza de la identificación adquiere especial importancia ante especies de relevancia médica. |
+| **Prioridad** | Imprescindible |
+| **Por qué importa** | Una identificación incorrecta puede proporcionar información equivocada al usuario y adquiere especial relevancia cuando existen especies visualmente similares o de importancia médica. |
+| **Afecta a** | RF-001, RF-003, RF-005 |
 
 #### RNF-REN-001 · Tiempo de identificación
 
@@ -178,38 +202,37 @@ requerida por los usuarios avanzados.
 | --- | --- |
 | **Atributo de calidad** | Rendimiento |
 | **Descripción** | El sistema presenta el resultado de una identificación en un tiempo máximo de 15 segundos desde que el usuario solicita la identificación. |
-| **Métrica** | Tiempo transcurrido desde la solicitud de identificación hasta la presentación del resultado: máximo 15 segundos. Las condiciones específicas de medición quedan pendientes de definir. |
-| **Origen** | Documento de requisitos inicial. El límite de 15 segundos no fue validado durante la entrevista de elicitación. |
+| **Métrica** | Tiempo transcurrido desde la solicitud de identificación hasta la presentación del resultado: máximo 15 segundos. |
+| **Origen** | Documento de requisitos inicial. |
 | **Prioridad** | Imprescindible |
-| **Por qué importa** | La identificación se realiza durante la observación de flora o fauna y un tiempo de respuesta elevado puede dificultar que el usuario consulte el resultado durante su recorrido. |
+| **Por qué importa** | Un tiempo de procesamiento elevado reduce la utilidad del reconocimiento durante actividades en campo. |
 | **Afecta a** | RF-001, RF-002, RF-003, RF-005 |
 
-#### RNF-SEG-001 · Protección de credenciales
+#### RNF-SEG-001 · Protección de datos
 
 | Campo | Contenido |
 | --- | --- |
 | **Atributo de calidad** | Seguridad |
-| **Descripción** | Las credenciales persistidas por el sistema no se almacenan en texto legible. |
-| **Métrica** | El 100 % de las credenciales persistidas por el sistema se encuentran protegidas y ninguna puede consultarse directamente en texto plano desde el almacenamiento. |
-| **Origen** | Documento de requisitos inicial, derivado de la necesidad de proteger la información de autenticación de los usuarios. |
+| **Descripción** | El sistema restringe el acceso a los datos privados asociados a una identificación al usuario propietario de dichos datos. |
+| **Métrica** | En el 100 % de las pruebas de acceso realizadas con una cuenta diferente a la propietaria, el sistema impide consultar los datos privados asociados a la identificación. |
+| **Origen** | Derivado del tipo de sistema: los registros pueden contener información asociada al usuario o a la ubicación donde se realizó una observación. |
 | **Prioridad** | Imprescindible |
-| **Por qué importa** | El almacenamiento de credenciales en texto legible permitiría exponer información de autenticación de los usuarios en caso de acceso no autorizado a los datos almacenados. |
-| **Afecta a** | Funciones de registro, autenticación y administración de cuentas de usuario. |
+| **Por qué importa** | El acceso no autorizado puede comprometer la privacidad del usuario y revelar información sobre la ubicación de determinadas especies. |
+| **Afecta a** | RF-004 |
 
 #### RNF-ESC-001 · Capacidad del historial
 
 | Campo | Contenido |
 | --- | --- |
-| **Atributo de calidad** | Escalabilidad / Capacidad |
-| **Descripción** | El historial de un usuario estándar conserva un máximo de 50 identificaciones. |
-| **Métrica** | Cantidad máxima de identificaciones disponibles simultáneamente en el historial de un usuario estándar: 50. |
-| **Origen** | Documento de requisitos inicial. El límite de 50 identificaciones es un supuesto pendiente de validación. |
+| **Atributo de calidad** | Escalabilidad |
+| **Descripción** | El historial de un usuario estándar conserva un máximo de 50 identificaciones y, al registrar una nueva identificación cuando se alcanza este límite, elimina la identificación más antigua. |
+| **Métrica** | El historial mantiene un máximo de 50 identificaciones simultáneamente. Al registrar la identificación número 51, se elimina la identificación con mayor antigüedad y el historial permanece con 50 registros. |
+| **Origen** | Documento de requisitos inicial. El comportamiento al alcanzar el límite fue definido durante la especificación de requisitos. |
 | **Prioridad** | Importante |
-| **Por qué importa** | Establecer un límite define la capacidad prevista del historial para un usuario estándar y permite comprobar el comportamiento del sistema al alcanzar dicha capacidad. |
+| **Por qué importa** | Establecer un límite permite controlar la cantidad de identificaciones conservadas para un usuario estándar y define de manera predecible el comportamiento del historial cuando alcanza su capacidad máxima. |
 | **Afecta a** | RF-004 |
 
 ---
-
 
 ## 5. Casos de uso
 
