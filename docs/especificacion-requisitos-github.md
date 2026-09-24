@@ -127,12 +127,13 @@ requerida por los usuarios avanzados.
 | RF-003 | Nivel de confianza | Imprescindible | Documento de requisitos inicial y entrevista de elicitación |
 | RF-004 | Historial de identificaciones | Importante | Documento de requisitos inicial y entrevista de elicitación |
 | RF-005 | Especie no reconocida | Imprescindible | Documento de requisitos inicial |
-| RF-006 | Especies visualmente similares | Importante | Alcance del producto |
-| RF-007 | Registro de observaciones de usuario avanzado | Importante | Alcance del producto |
-| RF-008 | Identificación offline | Imprescindible | Alcance del producto y entrevista de elicitación |
+| RF-006 | Especies visualmente similares | Importante | Visión del producto |
+| RF-007 | Registro de observaciones de usuario avanzado | Importante | Visión del producto |
+| RF-008 | Identificación offline | Imprescindible | Visión del producto y entrevista de elicitación |
 | RF-009 | Descarga de datos regionales para uso offline | Importante | Derivado de RF-008 |
-| RF-010 | Identificación con baja confianza | Imprescindible | Entrevista de elicitación |
+| RF-010 | Identificación con baja confianza | Imprescindible | Entrevista de elicitación y especificación |
 | RF-011 | Posible identificación | Importante | Entrevista de elicitación |
+| RF-012 | Imagen inadecuada para identificación | Importante | Visión del producto y entrevista de elicitación |
 
 ### 3.2 Fichas
 
@@ -144,7 +145,7 @@ requerida por los usuarios avanzados.
 | **Origen** | Documento de requisitos inicial. |
 | **Prioridad** | Imprescindible |
 | **Criterio de aceptación** | Al proporcionar una imagen de una especie incluida en el modelo disponible, el sistema procesa la imagen y genera un resultado de identificación. |
-| **Relacionado con** | RF-002, RF-003, RF-005, RF-006, RF-010, RF-011, RNF-CON-001, RNF-CON-002, RNF-CON-003, RNF-REN-001 |
+| **Relacionado con** | RF-002, RF-003, RF-005, RF-006, RF-010, RF-011, RF-012, RNF-CON-001, RNF-CON-002, RNF-CON-003, RNF-REN-001 |
 
 #### RF-002 · Información de la especie
 
@@ -191,7 +192,7 @@ requerida por los usuarios avanzados.
 | Campo | Contenido |
 | --- | --- |
 | **Descripción** | El sistema muestra especies visualmente similares presentes en la región de la especie identificada. |
-| **Origen** | Alcance del producto. |
+| **Origen** | Visión del producto. |
 | **Prioridad** | Importante |
 | **Criterio de aceptación** | Al consultar el resultado de una especie que cuenta con especies similares registradas para la región, el sistema muestra dichas especies como referencias adicionales. |
 | **Relacionado con** | RF-001, RF-002 |
@@ -201,7 +202,7 @@ requerida por los usuarios avanzados.
 | Campo | Contenido |
 | --- | --- |
 | **Descripción** | El sistema registra los datos asociados a las identificaciones realizadas por usuarios avanzados para su posterior consulta y documentación. |
-| **Origen** | Alcance del producto. |
+| **Origen** | Visión del producto. |
 | **Prioridad** | Importante |
 | **Criterio de aceptación** | Después de que un usuario avanzado realiza una identificación, los datos asociados quedan registrados y disponibles para su consulta posterior. |
 | **Relacionado con** | RF-001, RF-004, RNF-SEG-001 |
@@ -211,17 +212,17 @@ requerida por los usuarios avanzados.
 | Campo | Contenido |
 | --- | --- |
 | **Descripción** | El sistema identifica especies de importancia médica sin conexión a Internet cuando el usuario dispone previamente de los datos correspondientes a su región. |
-| **Origen** | Alcance del producto y entrevista de elicitación. El entrevistado identificó como relevante disponer offline de información relacionada con especies de importancia médica. |
+| **Origen** | Visión del producto y entrevista de elicitación. El entrevistado identificó como relevante disponer offline de información relacionada con especies de importancia médica. |
 | **Prioridad** | Imprescindible |
 | **Criterio de aceptación** | Con el dispositivo sin conexión a Internet y con los datos regionales previamente disponibles, el sistema procesa una imagen correspondiente a una especie de importancia médica incluida en dichos datos y genera un resultado de identificación. |
-| **Relacionado con** | RF-001, RF-003, RF-009, RF-010, RNF-CON-003 |
+| **Relacionado con** | RF-001, RF-003, RF-009, RF-010, RF-012, RNF-CON-003 |
 
 #### RF-009 · Descarga de datos regionales para uso offline
 
 | Campo | Contenido |
 | --- | --- |
 | **Descripción** | El sistema permite al usuario descargar los datos de una región necesarios para realizar identificaciones offline de especies de importancia médica. |
-| **Origen** | Derivado de RF-008 y del alcance del producto. |
+| **Origen** | Derivado de RF-008 y de la Visión del producto. |
 | **Prioridad** | Importante |
 | **Criterio de aceptación** | Cuando el usuario selecciona una región disponible y solicita su descarga con conexión a Internet, el sistema almacena los datos necesarios y posteriormente los reconoce como disponibles para identificación offline. |
 | **Relacionado con** | RF-008 |
@@ -231,7 +232,7 @@ requerida por los usuarios avanzados.
 | Campo | Contenido |
 | --- | --- |
 | **Descripción** | El sistema informa al usuario cuando una identificación no alcanza el nivel mínimo de confianza requerido para presentarse como confirmada. |
-| **Origen** | Entrevista de elicitación. El entrevistado indicó que espera transparencia cuando el sistema no tenga suficiente certeza sobre una identificación. |
+| **Origen** | Entrevista de elicitación y especificación. La entrevista confirmó la necesidad de comunicar la incertidumbre; los umbrales fueron definidos posteriormente durante la especificación. |
 | **Prioridad** | Imprescindible |
 | **Criterio de aceptación** | Si una identificación general obtiene una confianza inferior al 90 %, o una identificación de importancia médica obtiene una confianza inferior al 99 %, el sistema informa que el resultado no alcanza la confianza requerida y no lo presenta como identificación confirmada. |
 | **Relacionado con** | RF-001, RF-003, RF-005, RF-011, RNF-CON-002, RNF-CON-003 |
@@ -245,6 +246,16 @@ requerida por los usuarios avanzados.
 | **Prioridad** | Importante |
 | **Criterio de aceptación** | Cuando existe al menos una especie candidata pero ninguna alcanza el umbral correspondiente, el sistema muestra la candidata con mayor confianza identificándola explícitamente como posible identificación y muestra su nivel de confianza. |
 | **Relacionado con** | RF-003, RF-005, RF-010 |
+
+#### RF-012 · Imagen inadecuada para identificación
+
+| Campo | Contenido |
+| --- | --- |
+| **Descripción** | El sistema solicita una nueva imagen y muestra recomendaciones para mejorar la captura cuando la imagen proporcionada no tiene calidad suficiente para realizar una identificación. |
+| **Origen** | Visión del producto. La entrevista de elicitación reforzó este requisito al identificar fotografías con contraluz, poca iluminación o colores poco visibles como una dificultad del proceso actual. |
+| **Prioridad** | Importante |
+| **Criterio de aceptación** | Cuando una imagen no cumple las condiciones mínimas necesarias para realizar la identificación, el sistema no presenta una especie como resultado, solicita una nueva captura y muestra recomendaciones para mejorar la imagen. |
+| **Relacionado con** | RF-001, RF-008, RF-010, RNF-CON-002, RNF-CON-003 |
 
 ---
 
