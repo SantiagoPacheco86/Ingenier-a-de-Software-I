@@ -52,31 +52,58 @@
 
 ### Dentro del alcance
 
-- Presentación de información de la especie identificada: nombre común, nombre científico, región, nivel de riesgo o importancia médica, nivel de confianza y especies visualmente similares presentes en la región.
-- Identificación de especies mediante la cámara de un teléfono inteligente.
-- Recopilación y almacenamiento de datos de las identificaciones realizadas por Usuarios Avanzados, con el propósito de apoyar la documentación de flora y fauna regional.
+- Identificación de especies de flora y fauna mediante la cámara de un teléfono inteligente.
+
+- Presentación de información de la especie identificada, incluyendo nombre común, nombre científico, región, nivel de riesgo o importancia médica, nivel de confianza y especies visualmente similares presentes en la región.
+
 - Historial de especies identificadas por el usuario, incluyendo los datos asociados a cada identificación.
-- Reconocimiento offline de especies de importancia médica, siempre que el usuario haya descargado previamente la base de datos o modelo correspondiente a su región.
+
+- Recopilación y almacenamiento de datos de las identificaciones realizadas por usuarios avanzados, con el propósito de apoyar la documentación de flora y fauna regional.
+
+- Reconocimiento offline de especies de importancia médica, siempre que el usuario haya descargado previamente los datos correspondientes a su región.
+
+- Descarga previa de los datos regionales necesarios para realizar identificaciones offline de especies de importancia médica.
+
+- El modelo de identificación deberá alcanzar una precisión mínima del 90 % para especies generales incluidas en el modelo.
+
+- El modelo de identificación deberá alcanzar una precisión mínima del 99 % para especies clasificadas como de importancia médica e incluidas en el modelo.
+
+- Una identificación individual de una especie general deberá alcanzar un nivel de confianza mínimo del 90 % para ser presentada como una identificación confirmada.
+
+- Una identificación individual de una especie de importancia médica deberá alcanzar un nivel de confianza mínimo del 99 % para ser presentada como una identificación confirmada.
+
+- Cuando una identificación no alcance el nivel de confianza correspondiente, el sistema informará al usuario sobre la incertidumbre del resultado y podrá mostrar la especie con mayor nivel de confianza únicamente como una posible identificación.
 
 ### Explícitamente fuera del alcance
 
-- No guarda la imagén utilizada para la detección (Usuario Estándar)
-- No constituye una plataforma científica de validación colaborativa.
-- No garantiza una identificación definitiva de la especie.
-- No identifica especies fuera de las bases de datos/modelos utilizados para la región seleccionada
+- El sistema no almacena la imagen utilizada para realizar la detección cuando se trata de un usuario estándar.
 
-**Por qué queda fuera:**
+- El sistema no constituye una plataforma científica de validación colaborativa.
 
---- **No identifica especies fuera del modelo o base de datos regional instalada:** 
-Queda fuera porque ampliar la cobertura requeriría incorporar y entrenar el sistema con una cantidad considerablemente mayor de especies. 
+- El sistema no presenta como identificación confirmada un resultado que no alcance el nivel mínimo de confianza correspondiente.
 
---- **No garantiza una identificación definitiva de la especie:** 
-Queda fuera porque el resultado depende de factores como la calidad de la imagen, similitud entre especies y datos disponibles para el modelo.
+- El sistema no identifica como confirmadas especies que se encuentren fuera de los datos o modelos disponibles para la región seleccionada.
 
---- **No constituye una plataforma científica de validación colaborativa:** 
+- El sistema no garantiza que toda imagen proporcionada pueda producir una identificación confirmada, debido a factores como la calidad de la imagen, la similitud entre especies y la disponibilidad de la especie dentro del modelo.
+
+### Por qué queda fuera
+
+**No almacena la imagen utilizada para la detección de un usuario estándar:**  
+Queda fuera debido a que el usuario estándar utiliza la imagen como entrada para realizar la identificación, pero el almacenamiento permanente de dicha imagen no es necesario para cumplir con el objetivo principal del sistema.
+
+**No identifica como confirmadas especies fuera del modelo o de los datos regionales disponibles:**  
+Queda fuera porque ampliar la cobertura requiere incorporar, clasificar y evaluar datos correspondientes a nuevas especies y regiones antes de que puedan formar parte de los modelos disponibles.
+
+**No presenta como confirmadas identificaciones que no alcancen el nivel mínimo de confianza:**  
+Queda fuera porque BIOMA establece un umbral mínimo de confianza del 90 % para especies generales y del 99 % para especies de importancia médica. Los resultados inferiores a estos valores podrán presentarse únicamente como posibles identificaciones, indicando explícitamente su incertidumbre.
+
+**No garantiza que toda imagen produzca una identificación confirmada:**  
+Queda fuera porque el resultado depende de factores como la calidad de la imagen, las características visibles del organismo, la similitud entre especies y los datos disponibles para el modelo. El cumplimiento de los niveles mínimos de precisión del modelo no implica que todas las imágenes individuales puedan identificarse con el nivel de confianza requerido.
+
+**No constituye una plataforma científica de validación colaborativa:**  
 Queda fuera porque requeriría implementar mecanismos adicionales de revisión por expertos, validación de registros y colaboración entre usuarios.
 
-
+---
 ## 4. Tipo de sistema y restricciones
 
 **Tipo de sistema:**
@@ -98,9 +125,15 @@ Porque a trevés de un modelo de inteligencia artificial entrenado con bases de 
 
 **Reglas de negocio que ya identifiqué:**
 
-1. Si el porcentaje de confianza de la identificación es inferior al 90 %, el resultado no deberá presentarse como confiable.
-2. Si la calidad de la fotografía no es suficiente para realizar una identificación adecuada, el sistema deberá solicitar al usuario un nuevo intento y proporcionar recomendaciones para mejorar la imagen.
-3. Si la especie no se encuentra dentro de la base de datos o del modelo disponible, el sistema no deberá forzar una identificación y deberá indicar que no fue posible reconocerla.
+1. Si el nivel de confianza de una identificación de una especie general es inferior al 90 %, el resultado no deberá presentarse como una identificación confirmada.
+
+2. Si el nivel de confianza de una identificación de una especie de importancia médica es inferior al 99 %, el resultado no deberá presentarse como una identificación confirmada.
+
+3. Cuando una identificación no alcance el nivel de confianza requerido, el sistema podrá presentar la especie con mayor nivel de confianza como una posible identificación, indicando explícitamente la incertidumbre del resultado.
+
+4. Si la calidad de la fotografía no es suficiente para realizar una identificación adecuada, el sistema deberá solicitar al usuario un nuevo intento y proporcionar recomendaciones para mejorar la imagen.
+
+5. Si la especie no se encuentra dentro de los datos o del modelo disponible, el sistema no deberá forzar una identificación confirmada y deberá indicar que no fue posible reconocerla.
 
 ---
 
