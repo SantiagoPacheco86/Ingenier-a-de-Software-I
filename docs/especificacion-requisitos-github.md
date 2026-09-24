@@ -166,7 +166,7 @@ requerida por los usuarios avanzados.
 | --- | --- | --- | --- | --- |
 | RNF-CON-001 | Confiabilidad | Calidad de datos de referencia | Imprescindible | Derivado del tipo de sistema |
 | RNF-CON-002 | Confiabilidad | Precisión de identificación | Imprescindible | Derivado del tipo de sistema y entrevista de elicitación |
-| RNF-REN-001 | Rendimiento | Tiempo de identificación | Imprescindible | Documento de requisitos inicial |
+| RNF-REN-001 | Rendimiento | Tiempo de identificación | Imprescindible | Derivado del tipo de sistema y del documento de requisitos inicial |
 | RNF-SEG-001 | Seguridad | Protección de datos | Imprescindible | Derivado del tipo de sistema |
 | RNF-ESC-001 | Escalabilidad | Capacidad del historial | Importante | Documento de requisitos inicial |
 
