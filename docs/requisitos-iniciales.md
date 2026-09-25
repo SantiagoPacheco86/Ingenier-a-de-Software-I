@@ -10,9 +10,7 @@
 
 ## 1. Propósito
 
-Este documento conserva de forma estandarizada los requisitos iniciales definidos para BIOMA antes de la entrevista de elicitación y de las modificaciones posteriores realizadas en la especificación de requisitos.
-
-La redacción de los requisitos se mantiene fiel al entregable original. Se agrega únicamente el campo **Origen inicial** para distinguir entre requisitos provenientes de la Visión del producto, requisitos derivados de ella y supuestos formulados durante la definición inicial del sistema.
+Este documento contiene los requisitos iniciales definidos para BIOMA antes de la entrevista de elicitación y de las modificaciones posteriores realizadas en la especificación de requisitos.
 
 ---
 
