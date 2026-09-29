@@ -350,6 +350,19 @@ requerida por los usuarios avanzados.
 
 ## 5. Casos de uso
 
+El diagrama de casos de uso de BIOMA representa los actores que interactúan
+con el sistema y los principales casos de uso asociados a cada uno.
+
+El diagrama se encuentra disponible en la carpeta `docs/diagramas/` del
+repositorio en los siguientes formatos:
+
+- `casos-de-uso.drawio`: archivo editable del diagrama.
+- `casos-de-uso.drawio.png`: versión en imagen para su visualización directa
+  desde el repositorio.
+
+Los casos de uso representados en el diagrama se detallan a continuación y
+se relacionan con los requisitos funcionales que realizan.
+
 ### 5.1 Detalle
 
 | ID | Nombre | Actor principal | Requisitos que realiza |
@@ -378,9 +391,26 @@ requerida por los usuarios avanzados.
 
 ## 6. Trazabilidad
 
-| Requisito | Origen | Caso de uso | Elemento del prototipo |
-| --- | --- | --- | --- |
-|  |  |  |  |
+| Requisito | Origen | Caso de uso | Pantalla del prototipo | Estado |
+| --- | --- | --- | --- | --- |
+| RF-001 | Documento de requisitos inicial | CU-01, CU-04 | Pendiente | Pendiente |
+| RF-002 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-04 | Pendiente | Pendiente |
+| RF-003 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-04 | Pendiente | Pendiente |
+| RF-004 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-02, CU-04 | Pendiente | Pendiente |
+| RF-005 | Documento de requisitos inicial | CU-01, CU-04 | Pendiente | Pendiente |
+| RF-006 | Visión del producto | CU-01 | Pendiente | Pendiente |
+| RF-007 | Visión del producto | CU-03 | Pendiente | Pendiente |
+| RF-008 | Visión del producto y entrevista de elicitación | CU-04 | Pendiente | Pendiente |
+| RF-009 | Derivado de RF-008 | CU-05 | Pendiente | Pendiente |
+| RF-010 | Entrevista de elicitación y especificación | CU-01, CU-04 | Pendiente | Pendiente |
+| RF-011 | Entrevista de elicitación | CU-01, CU-04 | Pendiente | Pendiente |
+| RF-012 | Visión del producto y entrevista de elicitación | CU-01, CU-04 | Pendiente | Pendiente |
+| RNF-CON-001 | Derivado del tipo de sistema | CU-01, CU-04 | Pendiente | Pendiente |
+| RNF-CON-002 | Derivado del tipo de sistema y especificación | CU-01 | Pendiente | Pendiente |
+| RNF-CON-003 | Entrevista de elicitación y especificación | CU-01, CU-04 | Pendiente | Pendiente |
+| RNF-REN-001 | Documento de requisitos inicial | CU-01, CU-04 | Pendiente | Pendiente |
+| RNF-SEG-001 | Derivado del tipo de sistema | CU-02, CU-03 | Pendiente | Pendiente |
+| RNF-ESC-001 | Documento de requisitos inicial y especificación | CU-01, CU-02 | Pendiente | Pendiente |
 
 ---
 
