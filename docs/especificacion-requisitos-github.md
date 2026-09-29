@@ -171,11 +171,11 @@ requerida por los usuarios avanzados.
 
 | Campo | Contenido |
 | --- | --- |
-| **Descripción** | El sistema registra las identificaciones realizadas por el usuario en su historial. |
-| **Origen** | Documento de requisitos inicial. La entrevista de elicitación confirmó que conservar información de identificaciones anteriores aporta valor al usuario. |
+| **Descripción** | El sistema registra en el historial únicamente las identificaciones que alcanzan el nivel de confianza requerido para presentarse como confirmadas. |
+| **Origen** | Documento de requisitos inicial. La entrevista de elicitación confirmó que conservar información de identificaciones anteriores aporta valor al usuario. La exclusión de identificaciones no confirmadas fue definida durante la especificación. |
 | **Prioridad** | Importante |
-| **Criterio de aceptación** | Después de completar una identificación, esta aparece en el historial correspondiente al usuario con la información asociada que el sistema conserva. |
-| **Relacionado con** | RF-001, RNF-SEG-001, RNF-ESC-001 |
+| **Criterio de aceptación** | Cuando una identificación alcanza el nivel de confianza requerido para presentarse como confirmada, el sistema la registra en el historial. Si el resultado se presenta únicamente como posible identificación por no alcanzar el nivel de confianza requerido, el sistema no lo registra en el historial. |
+| **Relacionado con** | RF-001, RF-003, RF-010, RF-011, RNF-SEG-001, RNF-ESC-001 |
 
 #### RF-005 · Especie no reconocida
 
@@ -350,9 +350,29 @@ requerida por los usuarios avanzados.
 
 ## 5. Casos de uso
 
-Los casos de uso se desarrollarán a partir de los requisitos funcionales
-definidos y de los resultados obtenidos durante la entrevista de
-elicitación.
+### 5.1 Detalle
+
+| ID | Nombre | Actor principal | Requisitos que realiza |
+| --- | --- | --- | --- |
+| CU-01 | Realizar identificación | Usuario estándar / Usuario avanzado | RF-001, RF-002, RF-003, RF-004, RF-005, RF-006, RF-010, RF-011, RF-012 |
+| CU-02 | Consultar historial de identificaciones | Usuario estándar / Usuario avanzado | RF-004 |
+| CU-03 | Registrar observación avanzada | Usuario avanzado | RF-007 |
+| CU-04 | Realizar identificación offline | Usuario estándar / Usuario avanzado | RF-001, RF-002, RF-003, RF-004, RF-005, RF-008, RF-010, RF-011, RF-012 |
+| CU-05 | Descargar datos regionales para uso offline | Usuario estándar / Usuario avanzado | RF-009 |
+
+### 5.2 Caso de uso principal
+
+#### CU-01 · Realizar identificación
+
+| Campo | Contenido |
+| --- | --- |
+| **Actor principal** | Usuario estándar / Usuario avanzado |
+| **Objetivo** | Identificar una especie de flora o fauna observada mediante una imagen capturada con la cámara del dispositivo móvil y consultar la información asociada al resultado. |
+| **Precondición** | El sistema dispone de un modelo de identificación correspondiente a la región seleccionada. |
+| **Escenario principal** | 1. El usuario accede a la función de identificación.<br>2. El usuario apunta la cámara del dispositivo hacia el organismo que desea identificar.<br>3. El usuario captura una imagen del organismo.<br>4. El sistema verifica que la imagen tenga condiciones suficientes para realizar la identificación.<br>5. El sistema procesa la imagen utilizando el modelo disponible para la región seleccionada.<br>6. El sistema obtiene la especie candidata y determina el nivel de confianza del resultado.<br>7. El sistema verifica que el nivel de confianza alcance el umbral correspondiente al tipo de especie.<br>8. El sistema presenta la especie como identificación confirmada.<br>9. El sistema muestra el nivel de confianza de la identificación.<br>10. El sistema muestra el nombre común, nombre científico, región y nivel de riesgo o importancia médica de la especie identificada.<br>11. El sistema muestra las especies visualmente similares registradas para la región, cuando existan.<br>12. El sistema registra la identificación confirmada en el historial del usuario. |
+| **Flujos alternos** | **4a. La imagen no tiene calidad suficiente:** el sistema informa que la imagen no es adecuada, muestra recomendaciones para mejorar la captura y solicita una nueva imagen. El flujo regresa al paso 2.<br><br>**6a. La especie no se encuentra dentro del modelo disponible:** el sistema informa que no fue posible realizar la identificación, no presenta ninguna especie como identificación confirmada y no registra el resultado en el historial. El caso de uso finaliza.<br><br>**7a. Una especie general obtiene un nivel de confianza inferior al 90 %:** el sistema informa que el resultado no alcanza la confianza requerida. Si existe una especie candidata, muestra la de mayor confianza como posible identificación junto con su porcentaje de confianza. El sistema indica que no se trata de una identificación confirmada y no registra el resultado en el historial. El caso de uso finaliza.<br><br>**7b. Una especie de importancia médica obtiene un nivel de confianza inferior al 99 %:** el sistema informa que el resultado no alcanza la confianza requerida para una especie de importancia médica. Si existe una especie candidata, muestra la de mayor confianza como posible identificación junto con su porcentaje de confianza. El sistema indica que no se trata de una identificación confirmada y no registra el resultado en el historial. El caso de uso finaliza.<br><br>**11a. No existen especies visualmente similares registradas para la región:** el sistema omite la presentación de especies similares y continúa con el paso 12.<br><br>**12a. El historial del usuario estándar ya contiene 50 identificaciones:** el sistema elimina la identificación más antigua, registra la nueva identificación confirmada y mantiene el historial con un máximo de 50 registros. |
+| **Postcondición** | Si el resultado alcanza el nivel de confianza requerido, la especie queda presentada como identificación confirmada y registrada en el historial. Si el resultado no alcanza el nivel requerido o no puede realizarse la identificación, no se registra en el historial. |
+| **Requisitos que realiza** | RF-001, RF-002, RF-003, RF-004, RF-005, RF-006, RF-010, RF-011, RF-012, RNF-CON-001, RNF-CON-002, RNF-CON-003, RNF-REN-001, RNF-ESC-001 |
 
 ---
 
@@ -381,7 +401,7 @@ elicitación.
 | 24/09/2026 | RNF-CON-003 | Se estableció una precisión mínima del modelo del 99 % para especies de importancia médica. | La entrevista evidenció la necesidad de mayor certeza en especies de importancia médica y durante la especificación se definió el umbral cuantitativo. |
 | 24/09/2026 | RNF-ESC-001 | Se definió que, al superar las 50 identificaciones del historial estándar, se elimina la identificación más antigua. | El requisito original establecía el límite, pero no especificaba el comportamiento al alcanzar la capacidad máxima. |
 | 24/09/2026 | RF-012 | Se agregó el tratamiento de imágenes con calidad insuficiente para realizar una identificación. | La regla ya existía en la Visión del producto y la entrevista de elicitación confirmó que condiciones como contraluz, poca iluminación o colores poco visibles dificultan el proceso de identificación. |
-
+| 29/09/2026 | RF-004 | Se especificó que únicamente las identificaciones confirmadas se registran en el historial y que las posibles identificaciones por baja confianza no se almacenan. | Evitar conservar como parte del historial resultados que no alcanzaron el nivel mínimo de confianza requerido. |
 ---
 
 ## Antes de entregar
