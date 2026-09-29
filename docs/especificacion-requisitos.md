@@ -436,14 +436,14 @@ se relacionan con los requisitos funcionales que realizan.
 
 ## Antes de entregar
 
-- [ ] Todos los requisitos tienen identificador único y ninguno está repetido
-- [ ] Cada requisito expresa una sola idea
-- [ ] Cada requisito funcional tiene criterio de aceptación comprobable
-- [ ] Cada requisito no funcional tiene una métrica, no solo un adjetivo
-- [ ] El campo Origen distingue lo confirmado por el cliente de lo que sigo suponiendo
-- [ ] Hay al menos un requisito no funcional por cada atributo de calidad que impone mi tipo de sistema
-- [ ] Ningún requisito impone una solución técnica
-- [ ] Todos los requisitos caben dentro del alcance declarado
+- [x] Todos los requisitos tienen identificador único y ninguno está repetido
+- [x] Cada requisito expresa una sola idea
+- [x] Cada requisito funcional tiene criterio de aceptación comprobable
+- [x] Cada requisito no funcional tiene una métrica, no solo un adjetivo
+- [x] El campo Origen distingue lo confirmado por el cliente de lo que sigo suponiendo
+- [x] Hay al menos un requisito no funcional por cada atributo de calidad que impone mi tipo de sistema
+- [x] Ningún requisito impone una solución técnica
+- [x] Todos los requisitos caben dentro del alcance declarado
 - [ ] La tabla de trazabilidad está completa
 - [ ] Mi dupla revisó el documento y su revisión está registrada
 - [ ] Borré los ejemplos y las instrucciones en cursiva
