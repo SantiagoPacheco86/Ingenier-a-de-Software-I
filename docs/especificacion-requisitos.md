@@ -423,8 +423,40 @@ la versión actual del prototipo.
 | RNF-ESC-001 | Documento de requisitos inicial y especificación | CU-01, CU-02 | P06 | Pendiente |
 
 ---
+## 7. Revisión de la dupla
 
-## 7. Registro de cambios
+La especificación de requisitos fue revisada por la dupla antes de la entrega.
+Las observaciones recibidas se analizaron con el propósito de identificar
+inconsistencias, requisitos faltantes y aspectos que requieren mayor
+clarificación.
+
+Las observaciones aceptadas no implican necesariamente una modificación
+inmediata del alcance. Los cambios identificados se incorporarán o resolverán
+durante la siguiente revisión de la especificación.
+
+| ID | Observación de la dupla | Evaluación | Acción propuesta | Estado |
+| --- | --- | --- | --- | --- |
+| RD-001 | No existe un requisito no funcional de usabilidad, aunque la facilidad de uso forma parte de las expectativas del usuario estándar. | **Válida.** La facilidad de uso aparece como una característica relevante del sistema, pero actualmente no existe un RNF con una métrica que permita verificarla. | Definir `RNF-USA-001` con una condición o métrica comprobable de usabilidad durante la siguiente revisión. | Pendiente |
+| RD-002 | Se mencionan cuentas y propiedad de información o fotografías, pero no existen requisitos funcionales que definan el comportamiento de las cuentas. | **Parcialmente válida.** Existe una inconsistencia si la documentación presupone la existencia de cuentas sin especificar su comportamiento. Sin embargo, antes de crear nuevos requisitos debe determinarse si la gestión de cuentas pertenece realmente al alcance del sistema. | Revisar las referencias a cuentas. Si forman parte del alcance, definir los requisitos correspondientes; de lo contrario, eliminar o reformular dichas referencias. | Pendiente de decisión |
+| RD-003 | No queda suficientemente claro por qué se almacenan las fotografías y datos de los usuarios avanzados ni cuál es la finalidad de conservar esta información. | **Válida.** El registro de observaciones avanzadas necesita una finalidad y comportamiento más claramente delimitados para evitar interpretaciones distintas. | Revisar `RF-007` y el alcance relacionado con usuarios avanzados para especificar qué información se conserva, con qué finalidad y dentro de qué límites. | Pendiente |
+| RD-004 | Existe el caso de uso `CU-02 · Consultar historial de identificaciones`, pero no existe un requisito funcional independiente que especifique la consulta del historial. | **Válida.** Registrar información y consultarla constituyen comportamientos distintos y deben expresarse mediante requisitos separados. | Incorporar un requisito funcional específico para consultar el historial y actualizar posteriormente la relación de `CU-02` y la tabla de trazabilidad. | Pendiente |
+
+### Resultado de la revisión
+
+La revisión permitió identificar tres aspectos que requieren modificación y uno
+que requiere una decisión previa de alcance.
+
+Las observaciones no se incorporan automáticamente como requisitos en esta
+versión. Se registran como trabajo pendiente para la siguiente revisión, donde
+deberán actualizarse, según corresponda, los requisitos funcionales y no
+funcionales, los casos de uso y la tabla de trazabilidad.
+
+La revisión también permitió comprobar que los principales elementos del
+sistema —identificación de especies, tratamiento del nivel de confianza,
+historial, funcionamiento offline y manejo de imágenes inadecuadas— se
+encuentran representados en la especificación actual.
+---
+## 8. Registro de cambios
 
 | Fecha | Requisito / sección | Qué cambió | Por qué |
 | --- | --- | --- | --- |
