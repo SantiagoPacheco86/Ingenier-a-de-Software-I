@@ -4,7 +4,7 @@
 **Autor:** Santiago Pacheco Carrillo  
 **Versión:** 1.1  
 **Fecha de la última actualización:** 01/10/2026
-**Repositorio: https://github.com/SantiagoPacheco86/Ingenier-a-de-Software-I**
+> **Repositorio: https://github.com/SantiagoPacheco86/Ingenier-a-de-Software-I**
 
 ---
 
