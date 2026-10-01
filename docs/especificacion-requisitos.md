@@ -391,26 +391,36 @@ se relacionan con los requisitos funcionales que realizan.
 
 ## 6. Trazabilidad
 
+La siguiente tabla relaciona cada requisito del sistema con su origen, los
+casos de uso en los que participa y las pantallas del prototipo V1 en las
+que actualmente puede observarse su comportamiento.
+
+El estado **Vigente** indica que el requisito se encuentra representado
+en el prototipo V1. El estado **Pendiente** indica que el requisito forma
+parte de la especificación del sistema, pero su comportamiento todavía
+no se encuentra representado o no puede verificarse completamente en
+la versión actual del prototipo.
+
 | Requisito | Origen | Caso de uso | Pantalla del prototipo | Estado |
 | --- | --- | --- | --- | --- |
-| RF-001 | Documento de requisitos inicial | CU-01, CU-04 | Pendiente | Pendiente |
-| RF-002 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-04 | Pendiente | Pendiente |
-| RF-003 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-04 | Pendiente | Pendiente |
-| RF-004 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-02, CU-04 | Pendiente | Pendiente |
-| RF-005 | Documento de requisitos inicial | CU-01, CU-04 | Pendiente | Pendiente |
-| RF-006 | Visión del producto | CU-01 | Pendiente | Pendiente |
-| RF-007 | Visión del producto | CU-03 | Pendiente | Pendiente |
-| RF-008 | Visión del producto y entrevista de elicitación | CU-04 | Pendiente | Pendiente |
-| RF-009 | Derivado de RF-008 | CU-05 | Pendiente | Pendiente |
-| RF-010 | Entrevista de elicitación y especificación | CU-01, CU-04 | Pendiente | Pendiente |
-| RF-011 | Entrevista de elicitación | CU-01, CU-04 | Pendiente | Pendiente |
-| RF-012 | Visión del producto y entrevista de elicitación | CU-01, CU-04 | Pendiente | Pendiente |
-| RNF-CON-001 | Derivado del tipo de sistema | CU-01, CU-04 | Pendiente | Pendiente |
-| RNF-CON-002 | Derivado del tipo de sistema y especificación | CU-01 | Pendiente | Pendiente |
-| RNF-CON-003 | Entrevista de elicitación y especificación | CU-01, CU-04 | Pendiente | Pendiente |
-| RNF-REN-001 | Documento de requisitos inicial | CU-01, CU-04 | Pendiente | Pendiente |
-| RNF-SEG-001 | Derivado del tipo de sistema | CU-02, CU-03 | Pendiente | Pendiente |
-| RNF-ESC-001 | Documento de requisitos inicial y especificación | CU-01, CU-02 | Pendiente | Pendiente |
+| RF-001 | Documento de requisitos inicial | CU-01, CU-04 | P02, P03, P04, P05 | Vigente |
+| RF-002 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-04 | P05 | Vigente |
+| RF-003 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-04 | P05, A-02 | Vigente |
+| RF-004 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-02, CU-04 | P05, P06, A-02 | Vigente |
+| RF-005 | Documento de requisitos inicial | CU-01, CU-04 | — | Pendiente |
+| RF-006 | Visión del producto | CU-01 | P05 | Vigente |
+| RF-007 | Visión del producto | CU-03 | — | Pendiente |
+| RF-008 | Visión del producto y entrevista de elicitación | CU-04 | — | Pendiente |
+| RF-009 | Derivado de RF-008 | CU-05 | — | Pendiente |
+| RF-010 | Entrevista de elicitación y especificación | CU-01, CU-04 | A-02 | Vigente |
+| RF-011 | Entrevista de elicitación | CU-01, CU-04 | A-02 | Vigente |
+| RF-012 | Visión del producto y entrevista de elicitación | CU-01, CU-04 | A-01 | Vigente |
+| RNF-CON-001 | Derivado del tipo de sistema | CU-01, CU-04 | — | Pendiente |
+| RNF-CON-002 | Derivado del tipo de sistema y especificación | CU-01 | — | Pendiente |
+| RNF-CON-003 | Entrevista de elicitación y especificación | CU-01, CU-04 | — | Pendiente |
+| RNF-REN-001 | Documento de requisitos inicial | CU-01, CU-04 | P04 | Pendiente |
+| RNF-SEG-001 | Derivado del tipo de sistema | CU-02, CU-03 | — | Pendiente |
+| RNF-ESC-001 | Documento de requisitos inicial y especificación | CU-01, CU-02 | P06 | Pendiente |
 
 ---
 
@@ -432,6 +442,9 @@ se relacionan con los requisitos funcionales que realizan.
 | 24/09/2026 | RNF-ESC-001 | Se definió que, al superar las 50 identificaciones del historial estándar, se elimina la identificación más antigua. | El requisito original establecía el límite, pero no especificaba el comportamiento al alcanzar la capacidad máxima. |
 | 24/09/2026 | RF-012 | Se agregó el tratamiento de imágenes con calidad insuficiente para realizar una identificación. | La regla ya existía en la Visión del producto y la entrevista de elicitación confirmó que condiciones como contraluz, poca iluminación o colores poco visibles dificultan el proceso de identificación. |
 | 29/09/2026 | RF-004 | Se especificó que únicamente las identificaciones confirmadas se registran en el historial y que las posibles identificaciones por baja confianza no se almacenan. | Evitar conservar como parte del historial resultados que no alcanzaron el nivel mínimo de confianza requerido. |
+| 01/10/2026 | Sección 6 · Trazabilidad | Se relacionaron los requisitos con las pantallas correspondientes del prototipo V1 y se actualizó su estado. | Registrar qué requisitos se encuentran actualmente representados en el prototipo navegable y cuáles permanecen pendientes. |
+| 01/10/2026 | Prototipo V1 | Se incorporó el flujo principal de CU-01 y los flujos alternos de imagen inadecuada e identificación con baja confianza. | Permitir validar mediante un prototipo navegable el caso de uso principal y situaciones alternativas relevantes. |
+
 ---
 
 ## Antes de entregar
@@ -444,6 +457,6 @@ se relacionan con los requisitos funcionales que realizan.
 - [x] Hay al menos un requisito no funcional por cada atributo de calidad que impone mi tipo de sistema
 - [x] Ningún requisito impone una solución técnica
 - [x] Todos los requisitos caben dentro del alcance declarado
-- [ ] La tabla de trazabilidad está completa
+- [x] La tabla de trazabilidad está completa
 - [ ] Mi dupla revisó el documento y su revisión está registrada
-- [ ] Borré los ejemplos y las instrucciones en cursiva
+- [x] Borré los ejemplos y las instrucciones en cursiva
