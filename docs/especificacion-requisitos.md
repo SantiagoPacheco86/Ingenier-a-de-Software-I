@@ -3,7 +3,8 @@
 **Sistema:** BIOMA — Sistema de detección de flora y fauna local para senderistas  
 **Autor:** Santiago Pacheco Carrillo  
 **Versión:** 1.1  
-**Fecha de la última actualización:** 24/09/2026
+**Fecha de la última actualización:** 01/10/2026
+**Repositorio: https://github.com/SantiagoPacheco86/Ingenier-a-de-Software-I**
 
 ---
 
