@@ -455,6 +455,7 @@ La revisión también permitió comprobar que los principales elementos del
 sistema —identificación de especies, tratamiento del nivel de confianza,
 historial, funcionamiento offline y manejo de imágenes inadecuadas— se
 encuentran representados en la especificación actual.
+
 ---
 ## 8. Registro de cambios
 
