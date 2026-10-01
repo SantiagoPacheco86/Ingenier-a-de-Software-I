@@ -458,5 +458,5 @@ la versión actual del prototipo.
 - [x] Ningún requisito impone una solución técnica
 - [x] Todos los requisitos caben dentro del alcance declarado
 - [x] La tabla de trazabilidad está completa
-- [ ] Mi dupla revisó el documento y su revisión está registrada
+- [x] Mi dupla revisó el documento y su revisión está registrada
 - [x] Borré los ejemplos y las instrucciones en cursiva
