@@ -38,6 +38,10 @@ El prototipo de BIOMA fue desarrollado en Figma y representa el flujo principal 
 
 [Ejecutar prototipo navegable de BIOMA](https://www.figma.com/proto/N0iMemoAABgWZndAI7fMSr/Prototipo-BIOMA?node-id=4-4&p=f&t=BahaH1r685r2VcuE-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A4)
 
+### Video
+
+[Ver video BIOMA](https://youtu.be/3EXiWZ7SUwA)
+
 ## Flujo principal del prototipo
 
 El prototipo permite recorrer el flujo principal de identificación:
