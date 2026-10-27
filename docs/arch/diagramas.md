@@ -1,3 +1,109 @@
+Diagramas ADR - Ingeniería de Software
+
+4. Diagrama de flujo con decisiones
+
+flowchart TD
+    ini([Inicio])
+    val{"Monto mayor a cero?"}
+    exc{"Excede el saldo?"}
+    apl["Aplicar el abono"]
+    err1["Monto invalido"]
+    err2["Excede el saldo"]
+    fin([Fin])
+
+    ini --> val
+    val -->|No| err1
+    val -->|Si| exc
+    exc -->|Si| err2
+    exc -->|No| apl
+    err1 --> fin
+    err2 --> fin
+    apl --> fin
+
+    style apl fill:#ff5d00,color:#fff
+    
+5. Diagrama de secuencia
+
+sequenceDiagram
+    actor Rec as Recepcionista
+    participant Web as App web
+    participant Cob as Cobros
+    participant Age as Agenda
+    participant BD as Base de datos
+
+    Rec->>Web: Registra un abono de 500
+    Web->>Cob: abonar(cuenta, 500)
+    Cob->>Age: Que servicio se atendio?
+    Age-->>Cob: Consulta general
+    Cob->>BD: Guarda el pago
+    BD-->>Cob: Listo
+    Cob-->>Web: Pago registrado
+    Web-->>Rec: Muestra el nuevo saldo
+
+6. Diagrama de clases
+
+classDiagram
+    class CuentaDePaciente {
+        -double saldo
+        -List~Pago~ pagos
+        +abonar(monto) string
+        +consultarSaldo() double
+    }
+
+    class Pago {
+        -double monto
+        -Date fecha
+    }
+
+    class Paciente {
+        -string nombre
+        -string especie
+    }
+
+    Paciente "1" --> "1" CuentaDePaciente : tiene
+    CuentaDePaciente "1" --> "*" Pago : registra
+
+7. Diagrama de estados
+
+stateDiagram-v2
+    [*] --> Agendada
+    Agendada --> Confirmada: el dueno confirma
+    Agendada --> Cancelada: se cancela a tiempo
+    Confirmada --> Atendida: llega a consulta
+    Confirmada --> NoAsistio: no se presenta
+
+    Atendida --> [*]
+    Cancelada --> [*]
+    NoAsistio --> [*]
+
+8. Diagrama entidad-relación
+
+erDiagram
+    PACIENTE ||--o{ CITA : tiene
+    PACIENTE ||--|| CUENTA : tiene
+    CITA ||--o| EXPEDIENTE : genera
+    CUENTA ||--o{ PAGO : registra
+
+    PACIENTE {
+        int id
+        string nombre
+        string especie
+    }
+
+    CITA {
+        int id
+        date fecha
+        string motivo
+    }
+
+    PAGO {
+        int id
+        decimal monto
+        date fecha
+    }
+
+Registros de decisión y taller de diagramas
+
 1. Diagrama de contexto — C4 Nivel 1
 
 flowchart TD
