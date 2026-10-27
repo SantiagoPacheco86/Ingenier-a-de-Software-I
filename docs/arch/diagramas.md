@@ -1,111 +1,15 @@
-Diagramas ADR - Ingeniería de Software
 
-4. Diagrama de flujo con decisiones
+# Diagramas ADR - Ingeniería de Software
 
-flowchart TD
-    ini([Inicio])
-    val{"Monto mayor a cero?"}
-    exc{"Excede el saldo?"}
-    apl["Aplicar el abono"]
-    err1["Monto invalido"]
-    err2["Excede el saldo"]
-    fin([Fin])
+Este documento contiene los diagramas de arquitectura del sistema BIOMA y los diagramas de práctica realizados durante el taller de Mermaid.
 
-    ini --> val
-    val -->|No| err1
-    val -->|Si| exc
-    exc -->|Si| err2
-    exc -->|No| apl
-    err1 --> fin
-    err2 --> fin
-    apl --> fin
+---
 
-    style apl fill:#ff5d00,color:#fff
-    
-5. Diagrama de secuencia
+# Registros de decisión y taller de diagramas
 
-sequenceDiagram
-    actor Rec as Recepcionista
-    participant Web as App web
-    participant Cob as Cobros
-    participant Age as Agenda
-    participant BD as Base de datos
+## 1. Diagrama de contexto — C4 Nivel 1
 
-    Rec->>Web: Registra un abono de 500
-    Web->>Cob: abonar(cuenta, 500)
-    Cob->>Age: Que servicio se atendio?
-    Age-->>Cob: Consulta general
-    Cob->>BD: Guarda el pago
-    BD-->>Cob: Listo
-    Cob-->>Web: Pago registrado
-    Web-->>Rec: Muestra el nuevo saldo
-
-6. Diagrama de clases
-
-classDiagram
-    class CuentaDePaciente {
-        -double saldo
-        -List~Pago~ pagos
-        +abonar(monto) string
-        +consultarSaldo() double
-    }
-
-    class Pago {
-        -double monto
-        -Date fecha
-    }
-
-    class Paciente {
-        -string nombre
-        -string especie
-    }
-
-    Paciente "1" --> "1" CuentaDePaciente : tiene
-    CuentaDePaciente "1" --> "*" Pago : registra
-
-7. Diagrama de estados
-
-stateDiagram-v2
-    [*] --> Agendada
-    Agendada --> Confirmada: el dueno confirma
-    Agendada --> Cancelada: se cancela a tiempo
-    Confirmada --> Atendida: llega a consulta
-    Confirmada --> NoAsistio: no se presenta
-
-    Atendida --> [*]
-    Cancelada --> [*]
-    NoAsistio --> [*]
-
-8. Diagrama entidad-relación
-
-erDiagram
-    PACIENTE ||--o{ CITA : tiene
-    PACIENTE ||--|| CUENTA : tiene
-    CITA ||--o| EXPEDIENTE : genera
-    CUENTA ||--o{ PAGO : registra
-
-    PACIENTE {
-        int id
-        string nombre
-        string especie
-    }
-
-    CITA {
-        int id
-        date fecha
-        string motivo
-    }
-
-    PAGO {
-        int id
-        decimal monto
-        date fecha
-    }
-
-Registros de decisión y taller de diagramas
-
-1. Diagrama de contexto — C4 Nivel 1
-
+```mermaid
 flowchart TD
     est(["Usuario estándar"])
     avan(["Usuario avanzado"])
@@ -118,9 +22,11 @@ flowchart TD
     bioma -->|"Entrega resultados e historial autorizado"| avan
 
     style bioma fill:#ff5d00,color:#fff,stroke:#d94e00
+```
 
-2. Diagrama de contenedores — C4 Nivel 2
+## 2. Diagrama de contenedores — C4 Nivel 2
 
+```mermaid
 flowchart TD
     usuario(["Usuario de BIOMA"])
 
@@ -145,9 +51,11 @@ flowchart TD
 
     style api fill:#ff5d00,color:#fff,stroke:#d94e00
     style ia fill:#ffe2d1,stroke:#ff5d00,color:#222
+```
 
-3. Diagrama de componentes — C4 Nivel 3
+## 3. Diagrama de componentes — C4 Nivel 3
 
+```mermaid
 flowchart TD
     app["Aplicación móvil"]
     ia["Motor de inferencia IA"]
@@ -188,3 +96,122 @@ flowchart TD
 
     style identificacion fill:#ff5d00,color:#fff,stroke:#d94e00
     style fabrica fill:#ffe2d1,stroke:#ff5d00,color:#222
+```
+
+---
+
+# Cinco diagramas para practicar
+
+Los siguientes diagramas corresponden a los ejercicios de práctica de Mermaid utilizando el ejemplo de una clínica veterinaria.
+
+## 4. Diagrama de flujo con decisiones
+
+```mermaid
+flowchart TD
+    ini([Inicio])
+    val{"Monto mayor a cero?"}
+    exc{"Excede el saldo?"}
+    apl["Aplicar el abono"]
+    err1["Monto invalido"]
+    err2["Excede el saldo"]
+    fin([Fin])
+
+    ini --> val
+    val -->|No| err1
+    val -->|Si| exc
+    exc -->|Si| err2
+    exc -->|No| apl
+    err1 --> fin
+    err2 --> fin
+    apl --> fin
+
+    style apl fill:#ff5d00,color:#fff
+```
+
+## 5. Diagrama de secuencia
+
+```mermaid
+sequenceDiagram
+    actor Rec as Recepcionista
+    participant Web as App web
+    participant Cob as Cobros
+    participant Age as Agenda
+    participant BD as Base de datos
+
+    Rec->>Web: Registra un abono de 500
+    Web->>Cob: abonar(cuenta, 500)
+    Cob->>Age: Que servicio se atendio?
+    Age-->>Cob: Consulta general
+    Cob->>BD: Guarda el pago
+    BD-->>Cob: Listo
+    Cob-->>Web: Pago registrado
+    Web-->>Rec: Muestra el nuevo saldo
+```
+
+## 6. Diagrama de clases
+
+```mermaid
+classDiagram
+    class CuentaDePaciente {
+        -double saldo
+        -List~Pago~ pagos
+        +abonar(monto) string
+        +consultarSaldo() double
+    }
+
+    class Pago {
+        -double monto
+        -Date fecha
+    }
+
+    class Paciente {
+        -string nombre
+        -string especie
+    }
+
+    Paciente "1" --> "1" CuentaDePaciente : tiene
+    CuentaDePaciente "1" --> "*" Pago : registra
+```
+
+## 7. Diagrama de estados
+
+```mermaid
+stateDiagram-v2
+    [*] --> Agendada
+    Agendada --> Confirmada: el dueno confirma
+    Agendada --> Cancelada: se cancela a tiempo
+    Confirmada --> Atendida: llega a consulta
+    Confirmada --> NoAsistio: no se presenta
+
+    Atendida --> [*]
+    Cancelada --> [*]
+    NoAsistio --> [*]
+```
+
+## 8. Diagrama entidad-relación
+
+```mermaid
+erDiagram
+    PACIENTE ||--o{ CITA : tiene
+    PACIENTE ||--|| CUENTA : tiene
+    CITA ||--o| EXPEDIENTE : genera
+    CUENTA ||--o{ PAGO : registra
+
+    PACIENTE {
+        int id
+        string nombre
+        string especie
+    }
+
+    CITA {
+        int id
+        date fecha
+        string motivo
+    }
+
+    PAGO {
+        int id
+        decimal monto
+        date fecha
+    }
+```
