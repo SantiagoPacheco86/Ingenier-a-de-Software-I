@@ -1,6 +1,6 @@
 # De los requisitos a las clases
 
-**Asignatura:** Diseño Orientado a Objetos · SIS3407  
+**Asignatura:** Ingeniería de Software I · SIS3407  
 **Sistema:** BIOMA — Sistema de detección de flora y fauna local para senderistas  
 **Autor:** Santiago Pacheco Carrillo  
 **Documento:** DOO_S12S13  
