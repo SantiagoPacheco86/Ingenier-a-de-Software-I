@@ -2,8 +2,8 @@
 
 **Sistema:** BIOMA — Sistema de detección de flora y fauna local para senderistas  
 **Autor:** Santiago Pacheco Carrillo  
-**Versión:** 1.1  
-**Fecha de la última actualización:** 01/10/2026
+**Versión:** 1.2  
+**Fecha de la última actualización:** 04/11/2026
 > **Repositorio: https://github.com/SantiagoPacheco86/Ingenier-a-de-Software-I**
 
 ---
@@ -123,22 +123,25 @@ requerida por los usuarios avanzados.
 
 | ID | Nombre | Prioridad | Origen |
 | --- | --- | --- | --- |
-| RF-001 | Identificación de especie | Imprescindible | Documento de requisitos inicial |
-| RF-002 | Información de la especie | Imprescindible | Documento de requisitos inicial y entrevista de elicitación |
-| RF-003 | Nivel de confianza | Imprescindible | Documento de requisitos inicial y entrevista de elicitación |
-| RF-004 | Historial de identificaciones | Importante | Documento de requisitos inicial y entrevista de elicitación |
-| RF-005 | Especie no reconocida | Imprescindible | Documento de requisitos inicial |
-| RF-006 | Especies visualmente similares | Importante | Visión del producto |
-| RF-007 | Registro de observaciones de usuario avanzado | Importante | Visión del producto |
-| RF-008 | Identificación offline | Imprescindible | Visión del producto y entrevista de elicitación |
-| RF-009 | Descarga de datos regionales para uso offline | Importante | Derivado de RF-008 |
-| RF-010 | Identificación con baja confianza | Imprescindible | Entrevista de elicitación y especificación |
-| RF-011 | Posible identificación | Importante | Entrevista de elicitación |
-| RF-012 | Imagen inadecuada para identificación | Importante | Visión del producto y entrevista de elicitación |
+| RF-001 | Identificar especies mediante una imagen | Imprescindible | Documento de requisitos inicial |
+| RF-002 | Consultar información de una especie | Imprescindible | Documento de requisitos inicial y entrevista de elicitación |
+| RF-003 | Mostrar el nivel de confianza | Imprescindible | Documento de requisitos inicial y entrevista de elicitación |
+| RF-004 | Registrar identificaciones confirmadas | Importante | Documento de requisitos inicial y entrevista de elicitación |
+| RF-005 | Notificar una especie no reconocida | Imprescindible | Documento de requisitos inicial |
+| RF-006 | Consultar especies visualmente similares | Importante | Visión del producto |
+| RF-007 | Registrar observaciones avanzadas | Importante | Visión del producto |
+| RF-008 | Identificar especies de importancia médica sin conexión | Imprescindible | Visión del producto y entrevista de elicitación |
+| RF-009 | Descargar datos regionales para uso offline | Importante | Derivado de RF-008 |
+| RF-010 | Notificar una identificación de baja confianza | Imprescindible | Entrevista de elicitación y especificación |
+| RF-011 | Mostrar una posible identificación | Importante | Entrevista de elicitación |
+| RF-012 | Solicitar una nueva captura por calidad insuficiente | Importante | Visión del producto y entrevista de elicitación |
+| RF-013 | Capturar una imagen para identificación | Imprescindible | Derivado de CU-01 y observación docente |
+| RF-014 | Consultar el historial de identificaciones | Importante | Derivado de CU-02 y revisión de la dupla |
+| RF-015 | Autenticar usuarios y administrar sesiones | Importante | Propuesta para resolver referencias a cuentas; pendiente de validar alcance |
 
 ### 3.2 Fichas
 
-#### RF-001 · Identificación de especie
+#### RF-001 · Identificar especies mediante una imagen
 
 | Campo | Contenido |
 | --- | --- |
@@ -148,7 +151,7 @@ requerida por los usuarios avanzados.
 | **Criterio de aceptación** | Al proporcionar una imagen de una especie incluida en el modelo disponible, el sistema procesa la imagen y genera un resultado de identificación. |
 | **Relacionado con** | RF-002, RF-003, RF-005, RF-006, RF-010, RF-011, RF-012, RNF-CON-001, RNF-CON-002, RNF-CON-003, RNF-REN-001 |
 
-#### RF-002 · Información de la especie
+#### RF-002 · Consultar información de una especie
 
 | Campo | Contenido |
 | --- | --- |
@@ -158,7 +161,7 @@ requerida por los usuarios avanzados.
 | **Criterio de aceptación** | Al obtener una identificación confirmada, el sistema presenta el nombre común, nombre científico, región y nivel de riesgo o importancia médica registrados para la especie. |
 | **Relacionado con** | RF-001, RF-003, RF-006 |
 
-#### RF-003 · Nivel de confianza
+#### RF-003 · Mostrar el nivel de confianza
 
 | Campo | Contenido |
 | --- | --- |
@@ -168,7 +171,7 @@ requerida por los usuarios avanzados.
 | **Criterio de aceptación** | Después de procesar una imagen, el resultado presenta el porcentaje de confianza asociado a la identificación obtenida. |
 | **Relacionado con** | RF-001, RF-005, RF-010, RF-011 |
 
-#### RF-004 · Historial de identificaciones
+#### RF-004 · Registrar identificaciones confirmadas
 
 | Campo | Contenido |
 | --- | --- |
@@ -178,17 +181,17 @@ requerida por los usuarios avanzados.
 | **Criterio de aceptación** | Cuando una identificación alcanza el nivel de confianza requerido para presentarse como confirmada, el sistema la registra en el historial. Si el resultado se presenta únicamente como posible identificación por no alcanzar el nivel de confianza requerido, el sistema no lo registra en el historial. |
 | **Relacionado con** | RF-001, RF-003, RF-010, RF-011, RNF-SEG-001, RNF-ESC-001 |
 
-#### RF-005 · Especie no reconocida
+#### RF-005 · Notificar una especie no reconocida
 
 | Campo | Contenido |
 | --- | --- |
-| **Descripción** | El sistema informa que no fue posible identificar la especie cuando esta no se encuentra dentro del modelo disponible. |
+| **Descripción** | El sistema notifica al usuario que la especie no pudo reconocerse cuando el modelo regional no ofrece una identificación válida. |
 | **Origen** | Documento de requisitos inicial. |
 | **Prioridad** | Imprescindible |
 | **Criterio de aceptación** | Al analizar una especie que no pueda ser identificada mediante el modelo disponible, el sistema informa que no fue posible realizar la identificación y no presenta una especie como resultado confirmado. |
 | **Relacionado con** | RF-001, RF-003, RF-010, RF-011 |
 
-#### RF-006 · Especies visualmente similares
+#### RF-006 · Consultar especies visualmente similares
 
 | Campo | Contenido |
 | --- | --- |
@@ -198,17 +201,17 @@ requerida por los usuarios avanzados.
 | **Criterio de aceptación** | Al consultar el resultado de una especie que cuenta con especies similares registradas para la región, el sistema muestra dichas especies como referencias adicionales. |
 | **Relacionado con** | RF-001, RF-002 |
 
-#### RF-007 · Registro de observaciones de usuario avanzado
+#### RF-007 · Registrar observaciones avanzadas
 
 | Campo | Contenido |
 | --- | --- |
-| **Descripción** | El sistema registra los datos asociados a las identificaciones realizadas por usuarios avanzados para su posterior consulta y documentación. |
+| **Descripción** | El sistema permite al usuario avanzado guardar una observación asociada a una identificación, con especie candidata o confirmada, fecha, región y notas opcionales, para documentación y consulta privada. La conservación de fotografías y ubicación exacta requiere consentimiento y definición posterior de alcance. |
 | **Origen** | Visión del producto. |
 | **Prioridad** | Importante |
 | **Criterio de aceptación** | Después de que un usuario avanzado realiza una identificación, los datos asociados quedan registrados y disponibles para su consulta posterior. |
 | **Relacionado con** | RF-001, RF-004, RNF-SEG-001 |
 
-#### RF-008 · Identificación offline
+#### RF-008 · Identificar especies de importancia médica sin conexión
 
 | Campo | Contenido |
 | --- | --- |
@@ -218,7 +221,7 @@ requerida por los usuarios avanzados.
 | **Criterio de aceptación** | Con el dispositivo sin conexión a Internet y con los datos regionales previamente disponibles, el sistema procesa una imagen correspondiente a una especie de importancia médica incluida en dichos datos y genera un resultado de identificación. |
 | **Relacionado con** | RF-001, RF-003, RF-009, RF-010, RF-012, RNF-CON-003 |
 
-#### RF-009 · Descarga de datos regionales para uso offline
+#### RF-009 · Descargar datos regionales para uso offline
 
 | Campo | Contenido |
 | --- | --- |
@@ -228,7 +231,7 @@ requerida por los usuarios avanzados.
 | **Criterio de aceptación** | Cuando el usuario selecciona una región disponible y solicita su descarga con conexión a Internet, el sistema almacena los datos necesarios y posteriormente los reconoce como disponibles para identificación offline. |
 | **Relacionado con** | RF-008 |
 
-#### RF-010 · Identificación con baja confianza
+#### RF-010 · Notificar una identificación de baja confianza
 
 | Campo | Contenido |
 | --- | --- |
@@ -238,7 +241,7 @@ requerida por los usuarios avanzados.
 | **Criterio de aceptación** | Si una identificación general obtiene una confianza inferior al 90 %, o una identificación de importancia médica obtiene una confianza inferior al 99 %, el sistema informa que el resultado no alcanza la confianza requerida y no lo presenta como identificación confirmada. |
 | **Relacionado con** | RF-001, RF-003, RF-005, RF-011, RNF-CON-002, RNF-CON-003 |
 
-#### RF-011 · Posible identificación
+#### RF-011 · Mostrar una posible identificación
 
 | Campo | Contenido |
 | --- | --- |
@@ -248,15 +251,51 @@ requerida por los usuarios avanzados.
 | **Criterio de aceptación** | Cuando existe al menos una especie candidata pero ninguna alcanza el umbral correspondiente, el sistema muestra la candidata con mayor confianza identificándola explícitamente como posible identificación y muestra su nivel de confianza. |
 | **Relacionado con** | RF-003, RF-005, RF-010 |
 
-#### RF-012 · Imagen inadecuada para identificación
+#### RF-012 · Solicitar una nueva captura por calidad insuficiente
 
 | Campo | Contenido |
 | --- | --- |
-| **Descripción** | El sistema solicita una nueva imagen y muestra recomendaciones para mejorar la captura cuando la imagen proporcionada no tiene calidad suficiente para realizar una identificación. |
+| **Descripción** | El sistema solicita una nueva captura cuando detecta que la imagen es inadecuada para la identificación y presenta una recomendación de mejora. |
 | **Origen** | Visión del producto. La entrevista de elicitación reforzó este requisito al identificar fotografías con contraluz, poca iluminación o colores poco visibles como una dificultad del proceso actual. |
 | **Prioridad** | Importante |
 | **Criterio de aceptación** | Cuando una imagen no cumple las condiciones mínimas necesarias para realizar la identificación, el sistema no presenta una especie como resultado, solicita una nueva captura y muestra recomendaciones para mejorar la imagen. |
 | **Relacionado con** | RF-001, RF-008, RF-010, RNF-CON-002, RNF-CON-003 |
+
+---
+
+### 3.3 Requisitos incorporados en la revisión 1.2
+
+#### RF-013 · Capturar una imagen para identificación
+
+| Campo | Contenido |
+| --- | --- |
+| Descripción | El sistema permite capturar una imagen del organismo mediante la cámara del dispositivo móvil para utilizarla en el proceso de identificación. |
+| Origen | Derivado del flujo del prototipo y de la observación docente sobre la separación de casos de uso. |
+| Prioridad | Imprescindible |
+| Criterio de aceptación | Con permiso de cámara concedido, al pulsar capturar, el sistema obtiene una imagen y permite continuar a la verificación de calidad; si se cancela, no inicia identificación. |
+| Relacionado con | RF-001, RF-012, CU-06 |
+
+#### RF-014 · Consultar el historial de identificaciones
+
+| Campo | Contenido |
+| --- | --- |
+| Descripción | El sistema permite al usuario consultar la lista de sus identificaciones confirmadas previamente registradas. |
+| Origen | Observación RD-004 de la dupla y CU-02 ya existente. |
+| Prioridad | Importante |
+| Criterio de aceptación | Al abrir historial, el usuario ve únicamente sus identificaciones confirmadas; si no existen, se muestra un estado vacío; no puede consultar registros privados de otro usuario. |
+| Relacionado con | RF-004, RNF-SEG-001, CU-02 |
+
+#### RF-015 · Autenticar usuarios y administrar sesiones (propuesta pendiente)
+
+| Campo | Contenido |
+| --- | --- |
+| Descripción propuesta | El sistema autentica a usuarios que requieren acceder a información privada y permite cerrar la sesión. |
+| Origen | RD-002 de la revisión de la dupla; requiere decisión de alcance. |
+| Prioridad | Por definir |
+| Criterio de aceptación propuesto | Con credenciales válidas se inicia sesión; con credenciales inválidas se rechaza; al cerrar sesión se impide acceder a datos privados sin autenticación. |
+| Relacionado con | RNF-SEG-001, RF-007, RF-014 |
+
+**Decisión pendiente:** definir si BIOMA requiere cuentas en su primera versión o si utilizará identidad local para el historial. RF-015 no se considera aprobado hasta resolver esta decisión.
 
 ---
 
@@ -351,79 +390,187 @@ requerida por los usuarios avanzados.
 
 ## 5. Casos de uso
 
-El diagrama de casos de uso de BIOMA representa los actores que interactúan
-con el sistema y los principales casos de uso asociados a cada uno.
+La revisión docente identificó que CU-01 reunía captura, validación de imagen, identificación y consulta del resultado. La versión 1.2 separa estas responsabilidades en casos de uso con un objetivo principal definido. Se conserva CU-01 como identificación para mantener la trazabilidad histórica. Los casos nuevos deben incorporarse también al diagrama editable de `docs/diagramas/casos-de-uso.drawio` y exportarse nuevamente a PNG; esta actualización documental no significa que el archivo gráfico ya se haya modificado.
 
-El diagrama se encuentra disponible en la carpeta `docs/diagramas/` del
-repositorio en los siguientes formatos:
+### 5.1 Catálogo revisado
 
-- `casos-de-uso.drawio`: archivo editable del diagrama.
-- `casos-de-uso.drawio.png`: versión en imagen para su visualización directa
-  desde el repositorio.
-
-Los casos de uso representados en el diagrama se detallan a continuación y
-se relacionan con los requisitos funcionales que realizan.
-
-### 5.1 Detalle
-
-| ID | Nombre | Actor principal | Requisitos que realiza |
+| ID | Caso de uso | Actor principal | Requisitos |
 | --- | --- | --- | --- |
-| CU-01 | Realizar identificación | Usuario estándar / Usuario avanzado | RF-001, RF-002, RF-003, RF-004, RF-005, RF-006, RF-010, RF-011, RF-012 |
-| CU-02 | Consultar historial de identificaciones | Usuario estándar / Usuario avanzado | RF-004 |
-| CU-03 | Registrar observación avanzada | Usuario avanzado | RF-007 |
-| CU-04 | Realizar identificación offline | Usuario estándar / Usuario avanzado | RF-001, RF-002, RF-003, RF-004, RF-005, RF-008, RF-010, RF-011, RF-012 |
-| CU-05 | Descargar datos regionales para uso offline | Usuario estándar / Usuario avanzado | RF-009 |
+| CU-01 | Identificar una especie a partir de una imagen válida | Estándar / avanzado | RF-001, RF-003, RF-005, RF-010, RF-011 |
+| CU-02 | Consultar historial de identificaciones | Estándar / avanzado | RF-014 |
+| CU-03 | Registrar observación avanzada | Avanzado | RF-007 |
+| CU-04 | Identificar una especie de importancia médica sin conexión | Estándar / avanzado | RF-008, RF-003, RF-010 |
+| CU-05 | Descargar datos regionales para uso offline | Estándar / avanzado | RF-009 |
+| CU-06 | Capturar imagen de una especie | Estándar / avanzado | RF-013 |
+| CU-07 | Verificar calidad de imagen capturada | Estándar / avanzado | RF-012 |
+| CU-08 | Consultar información de una especie | Estándar / avanzado | RF-002, RF-006 |
+| CU-09 | Registrar identificación confirmada | Estándar / avanzado | RF-004 |
+| CU-10 | Consultar nivel de confianza de una identificación | Estándar / avanzado | RF-003 |
 
-### 5.2 Caso de uso principal
+**Nota de modelado:** los CU-07 y CU-09 representan comportamientos automáticos iniciados dentro de un objetivo del usuario. En el diagrama UML se pueden representar como inclusiones (`<<include>>`) cuando proceda, sin presentarlos como acciones manuales independientes. CU-10 puede integrarse en CU-08 si se prefiere evitar un caso de uso sin objetivo autónomo.
 
-#### CU-01 · Realizar identificación
+### 5.2 Fichas de casos de uso
+
+#### CU-06 · Capturar imagen de una especie
 
 | Campo | Contenido |
 | --- | --- |
-| **Actor principal** | Usuario estándar / Usuario avanzado |
-| **Objetivo** | Identificar una especie de flora o fauna observada mediante una imagen capturada con la cámara del dispositivo móvil y consultar la información asociada al resultado. |
-| **Precondición** | El sistema dispone de un modelo de identificación correspondiente a la región seleccionada. |
-| **Escenario principal** | 1. El usuario accede a la función de identificación.<br>2. El usuario apunta la cámara del dispositivo hacia el organismo que desea identificar.<br>3. El usuario captura una imagen del organismo.<br>4. El sistema verifica que la imagen tenga condiciones suficientes para realizar la identificación.<br>5. El sistema procesa la imagen utilizando el modelo disponible para la región seleccionada.<br>6. El sistema obtiene la especie candidata y determina el nivel de confianza del resultado.<br>7. El sistema verifica que el nivel de confianza alcance el umbral correspondiente al tipo de especie.<br>8. El sistema presenta la especie como identificación confirmada.<br>9. El sistema muestra el nivel de confianza de la identificación.<br>10. El sistema muestra el nombre común, nombre científico, región y nivel de riesgo o importancia médica de la especie identificada.<br>11. El sistema muestra las especies visualmente similares registradas para la región, cuando existan.<br>12. El sistema registra la identificación confirmada en el historial del usuario. |
-| **Flujos alternos** | **4a. La imagen no tiene calidad suficiente:** el sistema informa que la imagen no es adecuada, muestra recomendaciones para mejorar la captura y solicita una nueva imagen. El flujo regresa al paso 2.<br><br>**6a. La especie no se encuentra dentro del modelo disponible:** el sistema informa que no fue posible realizar la identificación, no presenta ninguna especie como identificación confirmada y no registra el resultado en el historial. El caso de uso finaliza.<br><br>**7a. Una especie general obtiene un nivel de confianza inferior al 90 %:** el sistema informa que el resultado no alcanza la confianza requerida. Si existe una especie candidata, muestra la de mayor confianza como posible identificación junto con su porcentaje de confianza. El sistema indica que no se trata de una identificación confirmada y no registra el resultado en el historial. El caso de uso finaliza.<br><br>**7b. Una especie de importancia médica obtiene un nivel de confianza inferior al 99 %:** el sistema informa que el resultado no alcanza la confianza requerida para una especie de importancia médica. Si existe una especie candidata, muestra la de mayor confianza como posible identificación junto con su porcentaje de confianza. El sistema indica que no se trata de una identificación confirmada y no registra el resultado en el historial. El caso de uso finaliza.<br><br>**11a. No existen especies visualmente similares registradas para la región:** el sistema omite la presentación de especies similares y continúa con el paso 12.<br><br>**12a. El historial del usuario estándar ya contiene 50 identificaciones:** el sistema elimina la identificación más antigua, registra la nueva identificación confirmada y mantiene el historial con un máximo de 50 registros. |
-| **Postcondición** | Si el resultado alcanza el nivel de confianza requerido, la especie queda presentada como identificación confirmada y registrada en el historial. Si el resultado no alcanza el nivel requerido o no puede realizarse la identificación, no se registra en el historial. |
-| **Requisitos que realiza** | RF-001, RF-002, RF-003, RF-004, RF-005, RF-006, RF-010, RF-011, RF-012, RNF-CON-001, RNF-CON-002, RNF-CON-003, RNF-REN-001, RNF-ESC-001 |
+| Actor | Usuario estándar o avanzado |
+| Objetivo | Proporcionar una fotografía para su análisis. |
+| Precondición | La aplicación está abierta y tiene permiso para usar la cámara. |
+| Flujo principal | 1. El usuario abre la cámara. 2. Enfoca el organismo. 3. Captura la fotografía. 4. El sistema entrega la imagen a la verificación de calidad. |
+| Alternos | A1. Si se deniega el permiso, se solicita habilitarlo. A2. Si el usuario cancela, no se procesa ni registra ninguna imagen. |
+| Postcondición | Imagen capturada disponible temporalmente para verificación. |
+| Requisitos | RF-013 |
+
+#### CU-07 · Verificar calidad de imagen capturada
+
+| Campo | Contenido |
+| --- | --- |
+| Actor | Usuario estándar o avanzado (inicia la captura); sistema (ejecuta la verificación) |
+| Objetivo | Determinar si la imagen puede utilizarse para identificación. |
+| Precondición | Existe una imagen capturada. |
+| Flujo principal | 1. El sistema evalúa condiciones mínimas de calidad. 2. La imagen resulta adecuada. 3. El sistema habilita la identificación. |
+| Alternos | A1. Si la imagen es inadecuada, el sistema indica el problema y recomienda mejorar iluminación o enfoque; permite repetir la captura sin enviar la imagen al reconocimiento. |
+| Postcondición | Imagen aceptada o nueva captura solicitada. |
+| Requisitos | RF-012 |
+
+#### CU-01 · Identificar una especie a partir de una imagen válida
+
+| Campo | Contenido |
+| --- | --- |
+| Actor | Usuario estándar o avanzado |
+| Objetivo | Obtener una identificación de la especie presente en una imagen válida. |
+| Precondición | Existe una imagen validada y un modelo regional disponible. |
+| Flujo principal | 1. El usuario solicita identificar la imagen. 2. El sistema procesa la imagen con el modelo disponible. 3. Obtiene una especie candidata y un valor de confianza. 4. Compara la confianza con el umbral correspondiente (90 % general; 99 % importancia médica). 5. Si cumple, presenta identificación confirmada y habilita la consulta de su información. |
+| Alternos | A1. Especie fuera del modelo: notifica que no fue reconocida, sin confirmar ni registrar. A2. Confianza insuficiente: muestra advertencia y, si existe candidata, la presenta únicamente como posible identificación con porcentaje; no la registra como confirmada. A3. Modelo regional no disponible: informa que no puede procesarse la solicitud. |
+| Postcondición | Resultado confirmado, posible o no reconocido; solo los confirmados son elegibles para historial. |
+| Requisitos | RF-001, RF-003, RF-005, RF-010, RF-011, RNF-CON-002, RNF-CON-003, RNF-REN-001 |
+
+#### CU-08 · Consultar información de una especie
+
+| Campo | Contenido |
+| --- | --- |
+| Actor | Usuario estándar o avanzado |
+| Objetivo | Conocer la información de la especie identificada. |
+| Precondición | Existe un resultado o especie seleccionada con información disponible. |
+| Flujo principal | 1. El usuario abre el detalle. 2. El sistema muestra nombre común, científico, región e importancia médica. 3. Muestra especies similares cuando están disponibles. |
+| Alternos | A1. Sin especies similares: omite esa sección. A2. Resultado posible: conserva una advertencia visible de incertidumbre. |
+| Postcondición | Información consultada sin alterar la identificación. |
+| Requisitos | RF-002, RF-006, RF-003 |
+
+#### CU-10 · Consultar nivel de confianza de una identificación
+
+| Campo | Contenido |
+| --- | --- |
+| Actor principal | Usuario estándar / Usuario avanzado |
+| Objetivo | Consultar el porcentaje de confianza de una identificación para conocer si el resultado cumple con el umbral requerido para considerarse confirmado. |
+| Precondición | El sistema ha procesado una imagen y dispone de una especie candidata con un valor de confianza calculado. |
+| Escenario principal | 1. El usuario consulta el resultado de la identificación. 2. El sistema muestra la especie candidata y su porcentaje de confianza. 3. El sistema determina el umbral correspondiente según la clasificación de la especie. 4. Si es una especie general, aplica el umbral del 90 %. 5. Si es una especie de importancia médica, aplica el umbral del 99 %. 6. El sistema informa si la identificación está confirmada. |
+| Flujo alterno A1 | Si la confianza es inferior al umbral correspondiente, el sistema presenta el resultado como identificación no confirmada y muestra una advertencia. |
+| Flujo alterno A2 | Si el modelo no genera una especie candidata o un valor de confianza válido, el sistema informa que no fue posible obtener una identificación confiable. |
+| Postcondición | El usuario conoce el nivel de confianza y el estado de confirmación. La consulta no modifica el resultado ni genera registros adicionales en el historial. |
+| Requisitos que realiza | RF-003 |
+
+#### CU-09 · Registrar identificación confirmada
+
+| Campo | Contenido |
+| --- | --- |
+| Actor | Usuario estándar o avanzado (beneficiario); sistema (registra) |
+| Objetivo | Conservar una identificación confirmada en el historial. |
+| Precondición | La identificación alcanzó su umbral de confianza. |
+| Flujo principal | 1. El sistema registra especie, fecha, región y confianza. 2. El registro queda asociado al usuario. |
+| Alternos | A1. Si es usuario estándar y existen 50 registros, elimina el más antiguo antes de incorporar el nuevo. A2. Si el resultado no es confirmado, no lo registra. A3. Si falla el almacenamiento, informa el error sin afirmar que se guardó. |
+| Postcondición | Historial actualizado o error comunicado. |
+| Requisitos | RF-004, RNF-ESC-001, RNF-SEG-001 |
+
+#### CU-02 · Consultar historial de identificaciones
+
+| Campo | Contenido |
+| --- | --- |
+| Actor | Usuario estándar o avanzado |
+| Objetivo | Recuperar las identificaciones confirmadas propias. |
+| Precondición | Usuario identificado por el mecanismo de acceso definido para la versión. |
+| Flujo principal | 1. Abre historial. 2. El sistema obtiene únicamente sus registros. 3. Muestra la lista y permite abrir un registro. |
+| Alternos | A1. Sin registros: muestra estado vacío. A2. Sin conexión y sin datos locales: informa indisponibilidad. A3. Acceso a registros ajenos: rechaza la solicitud. |
+| Postcondición | Consulta realizada sin modificar los registros. |
+| Requisitos | RF-014, RNF-SEG-001 |
+
+#### CU-03 · Registrar observación avanzada
+
+| Campo | Contenido |
+| --- | --- |
+| Actor | Usuario avanzado |
+| Objetivo | Documentar una observación de campo. |
+| Precondición | Usuario con perfil avanzado y especie o resultado disponible. |
+| Flujo principal | 1. Abre registro de observación. 2. Agrega notas opcionales. 3. Confirma guardar. 4. El sistema almacena los datos autorizados de forma privada. |
+| Alternos | A1. Cancelación: no almacena. A2. Datos obligatorios faltantes: solicita completarlos. A3. Usuario sin permisos: rechaza la operación. |
+| Postcondición | Observación privada almacenada o rechazo explicado. |
+| Requisitos | RF-007, RNF-SEG-001 |
+
+#### CU-04 · Identificar una especie de importancia médica sin conexión
+
+| Campo | Contenido |
+| --- | --- |
+| Actor | Usuario estándar o avanzado |
+| Objetivo | Identificar una especie de importancia médica sin Internet. |
+| Precondición | Paquete regional y recursos de inferencia offline compatibles ya descargados. |
+| Flujo principal | 1. El usuario solicita identificación offline con una imagen válida. 2. El sistema utiliza recursos locales. 3. Aplica el umbral de confianza del 99 %. 4. Muestra el resultado con su nivel de certeza. |
+| Alternos | A1. Paquete no disponible: informa que debe descargarse con Internet. A2. Confianza inferior al 99 %: presenta solo posible identificación y advertencia. A3. Especie no incluida: informa que no fue reconocida. |
+| Postcondición | Resultado disponible sin depender de inferencia en la nube. |
+| Requisitos | RF-008, RF-003, RF-010, RF-011 |
+
+#### CU-05 · Descargar datos regionales para uso offline
+
+| Campo | Contenido |
+| --- | --- |
+| Actor | Usuario estándar o avanzado |
+| Objetivo | Preparar recursos regionales para identificación sin Internet. |
+| Precondición | Existe conexión a Internet y un paquete regional publicado. |
+| Flujo principal | 1. Selecciona región. 2. Solicita descarga. 3. El sistema descarga y verifica el paquete. 4. Confirma disponibilidad offline. |
+| Alternos | A1. Descarga interrumpida: informa fallo y permite reintentar. A2. Almacenamiento insuficiente: informa espacio requerido. |
+| Postcondición | Paquete regional verificado y disponible o error comunicado. |
+| Requisitos | RF-009 |
+
+### 5.3 Relaciones recomendadas para actualizar el diagrama UML
+
+- CU-01 `<<include>>` CU-07 únicamente si el flujo de identificación siempre realiza esa verificación; si CU-07 ya se ejecutó al capturar, evitar duplicarla.
+- CU-01 puede desencadenar CU-09 al confirmar una identificación, como comportamiento automático condicionado, no como `<<include>>` incondicional.
+- CU-08 puede iniciarse desde el resultado de CU-01; no es obligatorio incluirlo para que la identificación concluya.
+- CU-04 reutiliza la lógica de identificación de CU-01 con recursos locales y umbral médico, sin exigir un segundo flujo de captura independiente.
 
 ---
 
 ## 6. Trazabilidad
 
-La siguiente tabla relaciona cada requisito del sistema con su origen, los
-casos de uso en los que participa y las pantallas del prototipo V1 en las
-que actualmente puede observarse su comportamiento.
+La columna **Estado de documentación** indica que el requisito está especificado, no que se haya implementado o demostrado. Las referencias de pantallas corresponden al prototipo V1 previamente documentado; las nuevas pantallas o cambios del diagrama siguen pendientes de verificación.
 
-El estado **Vigente** indica que el requisito se encuentra representado
-en el prototipo V1. El estado **Pendiente** indica que el requisito forma
-parte de la especificación del sistema, pero su comportamiento todavía
-no se encuentra representado o no puede verificarse completamente en
-la versión actual del prototipo.
-
-| Requisito | Origen | Caso de uso | Pantalla del prototipo | Estado |
-| --- | --- | --- | --- | --- |
-| RF-001 | Documento de requisitos inicial | CU-01, CU-04 | P02, P03, P04, P05 | Vigente |
-| RF-002 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-04 | P05 | Vigente |
-| RF-003 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-04 | P05, A-02 | Vigente |
-| RF-004 | Documento de requisitos inicial y entrevista de elicitación | CU-01, CU-02, CU-04 | P05, P06, A-02 | Vigente |
-| RF-005 | Documento de requisitos inicial | CU-01, CU-04 | — | Pendiente |
-| RF-006 | Visión del producto | CU-01 | P05 | Vigente |
-| RF-007 | Visión del producto | CU-03 | — | Pendiente |
-| RF-008 | Visión del producto y entrevista de elicitación | CU-04 | — | Pendiente |
-| RF-009 | Derivado de RF-008 | CU-05 | — | Pendiente |
-| RF-010 | Entrevista de elicitación y especificación | CU-01, CU-04 | A-02 | Vigente |
-| RF-011 | Entrevista de elicitación | CU-01, CU-04 | A-02 | Vigente |
-| RF-012 | Visión del producto y entrevista de elicitación | CU-01, CU-04 | A-01 | Vigente |
-| RNF-CON-001 | Derivado del tipo de sistema | CU-01, CU-04 | — | Pendiente |
-| RNF-CON-002 | Derivado del tipo de sistema y especificación | CU-01 | — | Pendiente |
-| RNF-CON-003 | Entrevista de elicitación y especificación | CU-01, CU-04 | — | Pendiente |
-| RNF-REN-001 | Documento de requisitos inicial | CU-01, CU-04 | P04 | Pendiente |
-| RNF-SEG-001 | Derivado del tipo de sistema | CU-02, CU-03 | — | Pendiente |
-| RNF-ESC-001 | Documento de requisitos inicial y especificación | CU-01, CU-02 | P06 | Pendiente |
+| Requisito | Caso de uso | Pantalla V1 | Estado de documentación |
+| --- | --- | --- | --- |
+| RF-001 | CU-01, CU-04 | P04, P05 | Actualizado |
+| RF-002 | CU-08 | P05 | Actualizado |
+| RF-003 | CU-01, CU-04, CU-08, CU-10 | P05, A-02 | Actualizado |
+| RF-004 | CU-09 | P05, P06 | Actualizado |
+| RF-005 | CU-01, CU-04 | — | Actualizado; representación pendiente |
+| RF-006 | CU-08 | P05 | Actualizado |
+| RF-007 | CU-03 | — | Revisado; alcance de datos pendiente |
+| RF-008 | CU-04 | — | Actualizado; representación pendiente |
+| RF-009 | CU-05 | — | Actualizado; representación pendiente |
+| RF-010 | CU-01, CU-04 | A-02 | Actualizado |
+| RF-011 | CU-01, CU-04 | A-02 | Actualizado |
+| RF-012 | CU-07 | A-01 | Actualizado |
+| RF-013 | CU-06 | P02, P03 | Nuevo; representado en V1 |
+| RF-014 | CU-02 | P06 | Nuevo; representado en V1 |
+| RF-015 | Pendiente de caso de uso y decisión de alcance | — | Propuesto, no aprobado |
+| RNF-CON-001 | CU-01, CU-04 | — | Pendiente de prueba |
+| RNF-CON-002 | CU-01 | — | Pendiente de prueba |
+| RNF-CON-003 | CU-01, CU-04 | — | Pendiente de prueba |
+| RNF-REN-001 | CU-01, CU-04 | P04 | Pendiente de medición |
+| RNF-SEG-001 | CU-02, CU-03, CU-09 | — | Pendiente de prueba |
+| RNF-ESC-001 | CU-02, CU-09 | P06 | Pendiente de prueba |
 
 ---
+
 ## 7. Revisión de la dupla
 
 La especificación de requisitos fue revisada por la dupla antes de la entrega.
@@ -437,10 +584,10 @@ durante la siguiente revisión de la especificación.
 
 | ID | Observación de la dupla | Evaluación | Acción propuesta | Estado |
 | --- | --- | --- | --- | --- |
-| RD-001 | No existe un requisito no funcional de usabilidad, aunque la facilidad de uso forma parte de las expectativas del usuario estándar. | **Válida.** La facilidad de uso aparece como una característica relevante del sistema, pero actualmente no existe un RNF con una métrica que permita verificarla. | Definir `RNF-USA-001` con una condición o métrica comprobable de usabilidad durante la siguiente revisión. | Pendiente |
+| RD-001 | No existe un requisito no funcional de usabilidad, aunque la facilidad de uso forma parte de las expectativas del usuario estándar. | **Válida.** La facilidad de uso aparece como una característica relevante del sistema, pero actualmente no existe un RNF con una métrica que permita verificarla. | Definir `RNF-USA-001` con una condición o métrica comprobable de usabilidad durante la siguiente revisión. | Pendiente; no es observación de la maestra |
 | RD-002 | Se mencionan cuentas y propiedad de información o fotografías, pero no existen requisitos funcionales que definan el comportamiento de las cuentas. | **Parcialmente válida.** Existe una inconsistencia si la documentación presupone la existencia de cuentas sin especificar su comportamiento. Sin embargo, antes de crear nuevos requisitos debe determinarse si la gestión de cuentas pertenece realmente al alcance del sistema. | Revisar las referencias a cuentas. Si forman parte del alcance, definir los requisitos correspondientes; de lo contrario, eliminar o reformular dichas referencias. | Pendiente de decisión |
 | RD-003 | No queda suficientemente claro por qué se almacenan las fotografías y datos de los usuarios avanzados ni cuál es la finalidad de conservar esta información. | **Válida.** El registro de observaciones avanzadas necesita una finalidad y comportamiento más claramente delimitados para evitar interpretaciones distintas. | Revisar `RF-007` y el alcance relacionado con usuarios avanzados para especificar qué información se conserva, con qué finalidad y dentro de qué límites. | Pendiente |
-| RD-004 | Existe el caso de uso `CU-02 · Consultar historial de identificaciones`, pero no existe un requisito funcional independiente que especifique la consulta del historial. | **Válida.** Registrar información y consultarla constituyen comportamientos distintos y deben expresarse mediante requisitos separados. | Incorporar un requisito funcional específico para consultar el historial y actualizar posteriormente la relación de `CU-02` y la tabla de trazabilidad. | Pendiente |
+| RD-004 | Existe el caso de uso `CU-02 · Consultar historial de identificaciones`, pero no existe un requisito funcional independiente que especifique la consulta del historial. | **Válida.** Registrar información y consultarla constituyen comportamientos distintos y deben expresarse mediante requisitos separados. | Se incorporó RF-014 y se actualizó CU-02 y la trazabilidad. | Atendida documentalmente |
 
 ### Resultado de la revisión
 
@@ -478,6 +625,14 @@ encuentran representados en la especificación actual.
 | 29/09/2026 | RF-004 | Se especificó que únicamente las identificaciones confirmadas se registran en el historial y que las posibles identificaciones por baja confianza no se almacenan. | Evitar conservar como parte del historial resultados que no alcanzaron el nivel mínimo de confianza requerido. |
 | 01/10/2026 | Sección 6 · Trazabilidad | Se relacionaron los requisitos con las pantallas correspondientes del prototipo V1 y se actualizó su estado. | Registrar qué requisitos se encuentran actualmente representados en el prototipo navegable y cuáles permanecen pendientes. |
 | 01/10/2026 | Prototipo V1 | Se incorporó el flujo principal de CU-01 y los flujos alternos de imagen inadecuada e identificación con baja confianza. | Permitir validar mediante un prototipo navegable el caso de uso principal y situaciones alternativas relevantes. |
+| 04/11/2026 | Versión 1.2 / RF-001–RF-012 | Se normalizaron los nombres de los requisitos funcionales con verbos de acción y se revisaron las descripciones de RF-005, RF-007 y RF-012. | Atender la observación docente sobre redacción orientada a acciones y claridad de la necesidad funcional. |
+| 04/11/2026 | RF-013 | Se agregó el requisito de capturar una imagen mediante la cámara. | Separar captura de imagen e identificación conforme a la observación docente. |
+| 04/11/2026 | RF-014 / RD-004 | Se agregó el requisito de consultar historial. | Resolver la discrepancia entre CU-02 y los requisitos identificada por la dupla. |
+| 04/11/2026 | RF-015 / RD-002 | Se documentó como propuesta pendiente la autenticación y gestión de sesiones. | No asumir cuentas obligatorias sin validar el alcance. |
+| 04/11/2026 | Sección 5 / CU-01–CU-10 | Se redefinieron las responsabilidades y se documentaron casos de uso separados para captura, validación, identificación, consulta y registro; se ampliaron fichas y alternos. | Atender la observación docente sobre casos de uso con múltiples objetivos y falta de desarrollo de los demás casos. |
+| 04/11/2026 | Sección 6 / Trazabilidad | Se actualizaron asociaciones de requisitos a casos de uso y se distinguió documentación de implementación. | Mantener consistencia después del desglose y evitar presentar prototipos como pruebas funcionales. |
+| 04/11/2026 | Diagrama UML de casos de uso | Se documentaron las modificaciones necesarias, pendientes de aplicar al archivo draw.io y a su exportación PNG. | Alinear el diagrama gráfico con el catálogo revisado, sin declarar falsamente un archivo gráfico actualizado. |
+| 04/11/2026 | Sección 7 / Revisión de la dupla | Se marcó RD-004 como atendida documentalmente; RD-001, RD-002 y RD-003 requieren decisiones o requisitos complementarios. | Conservar seguimiento verificable de observaciones anteriores. |
 
 ---
 
@@ -486,11 +641,11 @@ encuentran representados en la especificación actual.
 - [x] Todos los requisitos tienen identificador único y ninguno está repetido
 - [x] Cada requisito expresa una sola idea
 - [x] Cada requisito funcional tiene criterio de aceptación comprobable
-- [x] Cada requisito no funcional tiene una métrica, no solo un adjetivo
+- [x] Los RNF vigentes tienen métrica; RNF-USA-001 sigue pendiente de definición
 - [x] El campo Origen distingue lo confirmado por el cliente de lo que sigo suponiendo
 - [x] Hay al menos un requisito no funcional por cada atributo de calidad que impone mi tipo de sistema
-- [x] Ningún requisito impone una solución técnica
-- [x] Todos los requisitos caben dentro del alcance declarado
-- [x] La tabla de trazabilidad está completa
+- [ ] Revisar la consistencia entre procesamiento en nube e identificación offline en la próxima decisión arquitectónica
+- [ ] Validar el alcance de cuentas, almacenamiento de observaciones y RF-015
+- [x] La tabla de trazabilidad documental está actualizada; quedan pendientes las evidencias de implementación
 - [x] Mi dupla revisó el documento y su revisión está registrada
 - [x] Borré los ejemplos y las instrucciones en cursiva
