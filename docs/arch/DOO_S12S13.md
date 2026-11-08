@@ -710,8 +710,88 @@ classDiagram
 - **Multiplicidad:** se indica en ambos extremos de cada vínculo. El historial estándar admite hasta 50 identificaciones confirmadas, de acuerdo con RNF-ESC-001. Una identificación sin confirmación puede no tener una especie asociada como identificación confirmada.
 - **Sin herencia ni agregación:** los perfiles de usuario se mantienen como atributo mientras no se justifique una especialización de comportamiento. Se prefiere asociación frente a agregación compartida, según la guía de clase.
 
-### 5.2 Validación con un caso concreto (modelo de objetos)
 
-Un usuario estándar de prueba, `usuario01`, realiza una identificación de una especie regional. El modelo permite crear su `Historial`, asociar la `Identificacion` a un `ResultadoInferencia`, referenciar la `Especie` y conservarla en el historial **solo si** cumple el umbral de confirmación. Si no lo cumple, la identificación permanece fuera del historial. Este escenario verifica conceptualmente las relaciones y no representa una prueba de software ejecutada.
+## 5.2 Validación con un caso concreto (modelo de objetos)
+
+Se representa un escenario conceptual en el que el usuario estándar `usuario01` realiza dos identificaciones de una especie regional.
+
+La primera identificación obtiene una confianza del 96 %, supera el umbral general del 90 % y se conserva en el historial. La segunda obtiene una confianza del 72 %, por lo que no se confirma ni se incorpora al historial.
+
+```mermaid
+classDiagram
+    direction TB
+
+    class usuario01["usuario01 : Usuario"] {
+        id = usuario01
+        tipoPerfil = estandar
+        cuentaHabilitada = true
+    }
+
+    class historial01["historial01 : Historial"] {
+        capacidadMaxima = 50
+    }
+
+    class identificacion01["identificacion01 : Identificacion"] {
+        id = ID001
+        confianza = 0.96
+        estado = confirmada
+    }
+
+    class identificacion02["identificacion02 : Identificacion"] {
+        id = ID002
+        confianza = 0.72
+        estado = no_confirmada
+    }
+
+    class resultado01["resultado01 : ResultadoInferencia"] {
+        confianzaMaxima = 0.96
+        origenInferencia = nube
+    }
+
+    class resultado02["resultado02 : ResultadoInferencia"] {
+        confianzaMaxima = 0.72
+        origenInferencia = nube
+    }
+
+    class especie01["especie01 : Especie"] {
+        id = ESP001
+        nombreComun = Rana de ojos rojos
+        nombreCientifico = Agalychnis callidryas
+        importanciaMedica = false
+    }
+
+    class region01["region01 : Region"] {
+        id = REG001
+        nombre = America Central
+        ambitoGeografico = regional
+    }
+
+    usuario01 *-- historial01 : posee
+    usuario01 --> identificacion01 : realiza
+    usuario01 --> identificacion02 : realiza
+
+    identificacion01 *-- resultado01 : contiene
+    identificacion02 *-- resultado02 : contiene
+
+    resultado01 --> especie01 : propone candidata
+    resultado02 --> especie01 : propone candidata
+
+    identificacion01 --> especie01 : identifica confirmada
+    historial01 --> identificacion01 : conserva
+
+    region01 --> especie01 : cataloga
+
+    note for identificacion01 "96 por ciento supera umbral 90"
+    note for identificacion02 "72 por ciento no supera umbral 90"
+```
+
+### Resultado de la validación conceptual
+
+- **Identificación ID001:** confirmada con 96 % de confianza. Se conserva en `historial01`.
+- **Identificación ID002:** no confirmada con 72 % de confianza. Permanece fuera del historial.
+- **Historial:** pertenece a `usuario01` y mantiene una capacidad máxima de 50 identificaciones conforme a RNF-ESC-001.
+- **Especie:** ambas inferencias proponen la misma especie regional, pero únicamente la primera produce una identificación confirmada.
+
+Esta validación demuestra conceptualmente la coherencia entre las clases `Usuario`, `Historial`, `Identificacion`, `ResultadoInferencia`, `Especie` y `Region`, así como la aplicación del umbral de confianza. No constituye una prueba ejecutada del software.
 
 **Referencia del diagrama independiente:** [`diagramaClases.md`](diagramaClases.md).
