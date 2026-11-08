@@ -10,8 +10,6 @@
 
 ---
 
-<ins>usuario</ins>
-
 ## 1. Especificación de requisitos con sustantivos subrayados
 
 Se conserva el texto de propósito, usuarios, requisitos funcionales, requisitos no funcionales, casos de uso y trazabilidad. El subrayado es deliberadamente amplio: todavía **no se descartan** sustantivos.
