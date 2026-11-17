@@ -40,3 +40,8 @@ Esta decisión es compatible con el modelo SaaS y permite utilizar un servicio e
 El primer candidato a separarse será Identificación y reconocimiento. Se reconsiderará su despliegue independiente si, durante periodos de alta demanda, el backend supera el 80 % de utilización de recursos computacionales y se producen incumplimientos de los tiempos de respuesta establecidos en los requisitos no funcionales.
 
 Este umbral se propone como criterio inicial de evaluación y deberá validarse mediante pruebas de rendimiento.
+
+## Decisiones relacionadas
+ 
+- [ADR-002](adr-002-tecnologias.md): tecnologías de cada contenedor.
+- Diagramas C4: [`arquitectura-c4.md`](arquitectura-c4.md).
