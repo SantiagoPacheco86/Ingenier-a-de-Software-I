@@ -103,5 +103,3 @@ Se elige la **opción A**, condicionada a validar en los dispositivos objetivo e
 Antes de iniciar, confirmar con la dupla dos puntos: **(1)** si se exige específicamente publicar en historias de Instagram o basta con ofrecer al menos una red social desde el selector, y **(2)** si se permite compartir resultados de baja confianza, identificándolos explícitamente como posibles. Si el requisito exige integración directa con historias o conservar fotografías para compartir después, volver a estimar y aprobar ese alcance adicional.
 
 ---
-
-*Este análisis describe impacto y esfuerzo previstos. No afirma que el cambio haya sido implementado o probado.*
