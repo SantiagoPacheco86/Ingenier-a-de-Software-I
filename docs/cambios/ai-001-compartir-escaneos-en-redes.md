@@ -37,8 +37,6 @@ La imagen solo estará disponible para compartir durante la sesión de resultado
 | Diagrama de clases | 4 | Agregar `CompartidorResultado` y `ContenidoCompartible`, sus operaciones y asociaciones con `Identificacion` y `Especie`; representar la imagen como referencia temporal, no como dato persistente. |
 | Diagrama de secuencia | 4 | Agregar la interacción Usuario → pantalla de resultado → CompartidorResultado → mecanismo de compartir del sistema operativo → aplicación elegida; incluir alternativas de cancelación, fallo y ausencia de destino. |
 
-**Subtotal directo: 12 unidades.** Las unidades corresponden a los valores indicados por la plantilla, no a horas de implementación.
-
 ## Impacto indirecto
 
 | Artefacto | Unidad | Por qué se ve afectado |
@@ -46,8 +44,6 @@ La imagen solo estará disponible para compartir durante la sesión de resultado
 | Registro de decisión arquitectónica (ADR) | 3 | **Impacto: sí.** Debe registrarse la decisión de usar el mecanismo nativo de compartir frente a una integración específica con Instagram, así como la política de imagen temporal. No se presupone un identificador ADR existente: asignarlo según el repositorio. |
 | Diagrama de contenedores C4 | 3 | **Impacto limitado.** Si el C4 muestra dependencias externas del cliente móvil, debe indicarse la interacción con el servicio de compartir del sistema operativo. No se requiere nuevo contenedor backend ni servicio propio de redes sociales. Si el diagrama se limita a contenedores desplegables, documentar expresamente **sin cambio estructural**. |
 | Máquina de estados | 4 | **Impacto: sí, si se modela el flujo de identificación.** Añadir estados o transiciones de `resultado mostrado → preparando contenido → selector externo → regreso/cancelación/error`, sin modificar el estado de confirmación de la identificación ni el historial. Si no existe máquina de estados en el repositorio, registrar la necesidad de crearla solo si la actividad lo exige. |
-
-**Subtotal indirecto potencial: 10 unidades** de revisión de artefactos; el trabajo efectivo depende de cuáles existan y de su nivel de detalle.
 
 **Otros efectos indirectos que deben revisarse:**
 
