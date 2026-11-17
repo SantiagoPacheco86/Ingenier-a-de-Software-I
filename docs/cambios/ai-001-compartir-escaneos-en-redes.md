@@ -96,8 +96,6 @@ Se elige la **opción A**, condicionada a validar en los dispositivos objetivo e
 
 **De dónde sale este número.** Es una estimación de ingeniería preliminar, desglosada por tareas pequeñas, no una medición histórica de BIOMA. Supone que ya existen la pantalla de resultado, el acceso temporal a la fotografía y los datos de especie; que el proyecto puede usar la función de compartir del sistema operativo; y que se implementa en **una sola plataforma**. No incluye integración oficial con una API social, autenticación en redes, publicación automática, almacenamiento de fotos, backend ni una segunda plataforma móvil. Si se requiere compatibilidad verificada con historias de Instagram o desarrollo en Android **e** iOS, habrá que ampliar la estimación después de una prueba técnica.
 
-Como referencia de documentación, la plantilla asigna **12 unidades de impacto directo** y hasta **10 unidades de revisión indirecta**. Estas unidades sirven para comparar artefactos afectados; **no se suman como horas**.
-
 ## Recomendación
 
 **Aceptar el cambio con alcance controlado y programarlo después de los requisitos imprescindibles.** La solicitud aporta valor a la experiencia y a la difusión orgánica de BIOMA, pero tiene prioridad baja y no resuelve una falla del reconocimiento. La implementación nativa y temporal permite satisfacer el objetivo principal sin alterar el historial ni introducir almacenamiento permanente de imágenes.
